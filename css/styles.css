@@ -123,7 +123,10 @@ tr:nth-child(even) {
   color: white;
 }
 
-
+.resources {
+  color: white;
+  font-size: medium;
+}
 
 /*Media*/
 
