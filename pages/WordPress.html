@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordPress</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="logo"><a href="../">MAY THE FORCE BE WITH YOU</a></div>
+  <!-- https://reallanguage.club/anglijskie-teksty-dlya-srednego-urovnya/ --> 
+  <div class="wrapper">
+    <div class="main__container">
+      <details class="menu__item"><!--Theme-->
+        <summary>Theme</summary>
+        <div class="menu__inner">
+          <details>
+            <summary>Structure</summary>
+            <div>
+              Темы берут контент, хранящийся в WordPress, и отображают его в браузере.
+              HTML, CSS, PHP, JSON и JavaScript - wp stack.
+              Используйте имя вашей темы для создания пространства имен.
+              https://codex.wordpress.org/Theme_Unit_Test
+              https://wordpress.org/plugins/theme-check/
+              https://wordpress.org/plugins/debug-bar/
+              https://wordpress.org/plugins/query-monitor/
+              https://wordpress.org/plugins/log-deprecated-notices/
+              Редактор сайта: Внешний вид > Редактор в меню администратора WordPress.
+              Пункт «Стили» на панели меню.
+              Выбрать иконку Style Book (глаз) - полный доступ к изменению глобальных стилей сайта.
+              Экспортировать тему из интерфейса редактора сайта, нажмите кнопку ⋮ (Параметры) в области заголовка. Нажмите кнопку Экспорт.
+              Распаковать архив, переименовать папку с темой, отредактировать шапку style.css и заархивировать папку в zip.
+              https://wordpress.org/plugins/create-block-theme/
+              После активации Create Block Theme вы должны увидеть новую кнопку в редакторе сайта, которая отображается как значок гаечного ключа. Нажмите эту кнопку, чтобы открыть меню Create Block Theme .
+              - assets/
+                   - css/
+                       - core-site-title.css
+              - images/
+                   - header-background.png
+              - js/
+                   - navigation.js
+              - inc/
+                   - ClassName.php
+                   - functions-helpers.php
+              - parts/
+                   - footer.html
+                   - header.html
+              - patterns/
+                   - example.php
+              - styles/
+                   - example.json
+              - templates/
+                   - 404.html
+                   - archive.html
+                   - index.html(необходимый)
+                   - singular.html
+              - .editorconfig
+              - .gitattributes
+              - .gitignore
+              - CHANGELOG.md
+              - LICENSE.md
+              - README.txt
+              - functions.php
+              - package.json
+              - screenshot.png
+              - style.css(необходимый)
+              - theme.json
+              - style.css (основная таблица стилей): этот файл необходим для настройки данных темы, таких как ее имя и описание. Его также можно использовать для добавления пользовательского CSS.
+              - templates/index.html (шаблоны): Шаблон по умолчанию/запасной вариант. Это необходимо для того, чтобы WordPress считал это блочной темой.
+              - README.txt (обзор темы)
+                
+              - screenshot.png (скриншот темы 1200×900)
+              - theme.json(глобальные настройки и стили)
+              - parts(Template Parts): содержит пользовательские части шаблона темы.
+              - patterns(Шаблоны блоков): Многоразовые шаблоны, состоящие из одного или нескольких блоков, которые пользователи могут вставлять через интерфейс редактора. WordPress автоматически регистрирует файлы, включенные в эту папку.
+              - styles(Вариации стилей): вариации глобальных настроек и стилей темы, хранящиеся в отдельных файлах JSON.
+              - templates(Шаблоны): Файлы, которые представляют общую структуру документа front-end.
+              - inc(Пользовательская функциональность): темы часто будут иметь пользовательские PHP-классы или файлы.
+              -.editorconfig( EditorConfig ): используется для настройки форматирования, такого как окончания строк и интервалы, для редакторов кода.
+              - .gitattributes( Git: Атрибуты ): Настраивает атрибуты с помощью системы контроля версий Git.
+              - .gitignore( Git: Ignore ): определяет файлы, которые следует игнорировать при фиксации кода в репозитории Git.
+              - CHANGELOG.md( Ведите журнал изменений ): понятный человеку журнал важных изменений для каждого выпуска вашей темы.
+              - LICENSE.md( Обзор темы: Лицензирование и авторские права ): Определяет лицензию для темы. Обратите внимание, что все темы, отправленные в каталог тем WordPress, должны быть лицензированы по GPL v2+.
+              - package.json( npm: package.json ): часто используется для определения процесса сборки и зависимостей разработки в среде Node.
+              WordPress автоматически обрабатывает окончательную разметку, поэтому вам остается только создать шаблоны.
+            </div>
+          </details>
+          <details>
+            <summary>functions.php</summary>
+            <div>
+              Есть несколько причин, по которым вы можете увидеть сломанный сайт с белым экраном. Одна из таких причин — когда файл functions.php(или любой файл PHP) имеет пробел после закрывающего ?>
+              <?php
+              add_action( 'after_setup_theme',
+              function () {
+              add_theme_support( 'wp-block-styles' );
+              } );
+              include get_parent_theme_file_path( 'inc/helpers.php' ); - подключить файл из родительской темы
+              include get_theme_file_path( 'inc/helpers.php' ); - подключить файл из дочерней темы
+              Возвращает URL-адрес:
+              - get_stylesheet_uri(): Возвращает URL-адрес файла активной темы style.css.
+              - get_theme_file_uri( $file ): Возвращает URL активной темы с необязательным $fileпараметром. Возвращается к родительской теме, если активна дочерняя тема и файл не существует.
+              - get_parent_theme_file_uri( $file ): Возвращает URL-адрес родительской темы с необязательным $fileпутем.
+              Возвращает путь к каталогу:
+              - get_theme_file_path( $file ): Возвращает путь к каталогу активной темы с необязательным $fileпараметром. Возвращается к родительской теме, если активна дочерняя тема и файл не существует.
+              - get_parent_theme_file_path( $file ): Возвращает путь к каталогу родительской темы с необязательным $fileпараметром.
+              Стили:
+              add_action( 'wp_enqueue_scripts',
+              function () {
+              wp_enqueue_style( // ставлю в очередь style.css
+                'theme-slug-style',
+                get_stylesheet_uri()
+              );
+              wp_enqueue_style( // ставлю в очередь primary.css
+                'theme-slug-primary',
+                get_parent_theme_file_uri( 'assets/css/primary.css' )
+              );
+              wp_add_inline_style( // добавляю CSS в <head> область на фронтенде
+                'theme-slug-primary', // при подключении primary.css
+                'body { background: #eee; }'
+              );
+              } );
+              Чтобы пользовательские стили отображались в редакторе:
+              add_action( 'after_setup_theme',
+              function () {
+              add_editor_style( array(
+                get_stylesheet_uri(),
+                get_parent_theme_file_uri( 'assets/css/primary.css' )
+              ) );
+              } );
+              wp_enqueue_block_style() - функция загрузки таблиц стилей для каждого блока в редакторе и на фронтенде.
+              JS:
+              add_action( 'wp_enqueue_scripts',
+              function () {
+              wp_enqueue_script( // ставлю в очередь navigation.js
+                'theme-slug-navigation',
+                get_parent_theme_file_uri( 'assets/js/navigation.js' ),
+                array(),
+                wp_get_theme()->get( 'Version' ),
+                true
+              );
+              wp_add_inline_script( // добавляю JS в <head> область на фронтенде
+                'theme-slug-navigation',
+                'console.log( "Testing" );'
+              );
+              } );
+              enqueue_block_editor_assets - JS для редактора блоков
+              add_action( 'enqueue_block_editor_assets', 'theme_slug_enqueue_editor_scripts'
+              function () {
+              wp_enqueue_script( // ставлю в очередь editor.js для редактора
+                'theme-slug-editor',
+                get_parent_theme_file_uri( 'assets/js/editor.js' ),
+                array(),
+                wp_get_theme()->get( 'Version' ),
+                true
+              );
+              } );
+              Управление скриптами - @wordpress/scripts
+              Список включенных скриптов - wp-includes/script-loader.php
+              Обращение к файлу изображения:
+              <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/example.webp' ) ); ?>" alt="" />
+              Шрифты подключать через theme.json
+            </div>
+          </details>
+          <details>
+            <summary>theme.json</summary>
+            <div>
+              theme.json - отражено в редакторе
+ - Включить или отключить такие функции, как буквицы, отступы, поля и высота строки.
+ - Добавить цветовую палитру, градиенты, дуплексы и тени.
+ - Настроить типографские функции, такие как семейства шрифтов, размеры и многое другое.
+ - Добавить пользовательские свойства CSS.
+ - Регистрация пользовательских шаблонов, частей шаблонов и назначение деталей областям шаблонов.
+{
+ "$schema": "https://schemas.wp.org/trunk/theme.json",
+ "version": 2,
+ "settings": {},
+ "styles": {},
+ "customTemplates": {},
+ "templateParts": {},
+ "patterns": []
+}
+ - $schema: используется для определения поддерживаемой схемы JSON, которая будет интегрироваться со многими редакторами кода, предоставляя вам подсказки и сообщения об ошибках «на лету».
+ - version: Версия theme.json схемы, для которой вы строите. Последняя версия — 2, ее всегда можно найти в theme.json Living Reference — документе, в котором перечислены самые последние свойства, которые вы можете задать.
+ - settings: используется для определения элементов управления блоками, цветовых палитр, размеров шрифтов и многого другого.
+ - styles: используется для применения цветов, размеров шрифтов, пользовательских CSS и т. д. к веб-сайту и блокам.
+ - customTemplates: Метаданные для пользовательских шаблонов, определенных в папке вашей темы /templates.
+ - templateParts: Метаданные для частей шаблона, определенных в папке вашей темы /parts.
+ - patterns: Массив шаблонов, которые необходимо зарегистрировать из каталога шаблонов .
+Динамически переопределить значения в theme.json:
+https://developer.wordpress.org/news/2023/07/how-to-modify-theme-json-data-using-server-side-filters/
+theme.json - глобальные настройки, стили и т.д. для блочных и классических тем, отображаются как на фронтенде так и в редакторе.
+{
+        "$schema": "https://schemas.wp.org/trunk/theme.json",
+ "version": 2,
+        "settings": {},
+ "styles": {},
+ "customTemplates": {},
+ "templateParts": {},
+ "patterns": []
+}
+
+ - $schema: используется для определения поддерживаемой схемы JSON, которая будет интегрироваться со многими редакторами кода, предоставляя вам подсказки и сообщения об ошибках «на лету».
+
+ - version(обязательно): Версия theme.json схемы, для которой вы строите. https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference/theme-json-living/
+
+ - settings: Используется для определения отображаемых элементов управления блоками, настройки предустановок и многого другого.
+ "settings": {
+  "appearanceTools": false, - включение других настроек. При обновлении WordPress может автоматически включить в тему новые инструменты дизайна в будущем.
+
+  "border": {}, - управление шириной, стилем, цветом и радиусом границы.
+Настройка границ блоков, предоставляет доступные параметры в редакторе.
+ - color: Включает/отключает выбор цвета границы.
+ - radius: Включает/отключает управление радиусом границы.
+ - style: Включает/отключает селектор стиля границы (пользователи могут выбрать solid, dashedили dotted).
+ - width: Включает/отключает ввод ширины границы.
+
+  "color": {}, - регистрировать цветовую палитру, градиенты, дуплекс.
+Предустановки, которые пользователи могут выбирать.
+ "settings": {
+  "color": {
+   "background": true, - пользователь может настраивать фон глобально (по умолчанию true).
+                       "link": true, - пользователь может настраивать ссылки глобально (по умолчанию true).
+                       "text": true, - пользователь может настраивать текст глобально (по умолчанию true).
+   "custom": true, - пользователь может создавать и использовать собственные цвета для блоков (по умолчанию true).
+   "customDuotone": true, - пользователь может создавать собственные двухцветные фильтры (обычно используемые для наложения на блоки с изображениями) для блоков (по умолчанию true).
+   "customGradient": true, - пользователь может создавать собственные градиенты фона для блоков (по умолчанию true).
+   "defaultDuotone": true, - пользователь может выбирать из стандартных предустановок WordPress (по умолчанию true).
+   "defaultGradients": true, - - пользователь может выбирать из стандартных предустановок WordPress (по умолчанию true).
+   "defaultPalette": true, - - пользователь может выбирать из стандартных предустановок WordPress (по умолчанию true).
+   "duotone": [], - регистрация пользовательских цветовых пресетов двухцветных фильтров, из которых пользователь может выбирать.
+Регистрация двухцветного фильтра
+"duotone": [
+   {
+    "colors": [
+     "#450a0a",
+     "#fef2f2"
+    ],
+    "name": "Red",
+    "slug": "red"
+   }
+                  ]
+   "gradients": [], - регистрация пользовательских цветовых пресетов градиентов, из которых пользователь может выбирать.
+Регистрация градиента
+"gradients": [
+            {
+    "gradient": "linear-gradient(to right, #10b981, #64a30d)",
+    "name": "Emerald",
+    "slug": "emerald"
+           }
+                    ]
+   "palette": [] - регистрация пользовательских цветовых пресетов цвета, из которых пользователь может выбирать.
+Пресет цветовой палитры с заголовком contrast станет
+--wp--preset--color--contrast.
+WordPress генерирует CSS-классы на основе предустановки
+.has-contrast-color.
+Регистрация цвета
+  "palette": [
+    {
+     "color": "#ffffff",
+     "name": "Base",
+     "slug": "base"
+    }
+                        ]
+  }
+ }
+Слаг base - для фона сайта, а contrast - для текста.
+
+  "custom": {}, - пользовательские свойства CSS
+{
+ "version": 2,
+ "settings": {
+  "custom": {
+   "lineHeight": "1.4em"
+  }
+ }
+}
+создаст:
+body {--wp--custom--line-height: 1.4em;}
+
+{
+ "version": 2,
+ "settings": {
+  "custom": {
+   "lineHeight": {
+    "xs": "1",
+    "sm": "1.25",
+    "md": "1.5",
+    "lg": "1.75"
+   }
+  }
+ }
+}
+создаст:
+body {
+ --wp--custom--line-height--xs: 1;
+ --wp--custom--line-height--sm: 1.25;
+ --wp--custom--line-height--md: 1.5;
+ --wp--custom--line-height--lg: 1.75;
+}
+получить доступ к свойству line-height
+var:custom|line-height|md либо var( --wp--custom--line-height--md )
+
+пресеты — это стандартизированный метод создания опций в интерфейсе и генерации пользовательских свойств CSS.
+
+  "dimensions": {}, - минимальная высота, включает управление минимальной высотой блока в редакторе
+
+  "layout": {}, - свойства макета, такие как ширина контента и ширина блока.
+В WordPress есть отдельная настройка полной ширины.
+{
+ "version": 2,
+ "settings": {
+  "layout": {
+   "contentSize": "40rem",
+   "wideSize": "64rem"
+  }
+ }
+}
+"wideSize": "64rem" - блок выходит за рамки контентной части.
+
+                "lightbox: {}", - настроить функцию лайтбокса изображения.
+Включает функцию лайтбокса, которая расширяет изображение, когда посетитель сайта нажимает на изображение.
+Относится только к основному блоку изображений (core/image).
+{
+ "version": 2,
+ "settings": {
+  "blocks": {
+   "core/image": {
+    "lightbox": {
+     "enabled": true, - включить функцию лайтбокса
+                                       "allowEditing": true - позволяет пользователю включать/отключать лайтбокс для отдельных изображений.
+    }
+   }
+  }
+ }
+}
+
+  "position": {}, - поддержкa липкого позиционирования
+{
+ "version": 2,
+ "settings": {
+  "position": {
+   "sticky": true - прикрепит блок к его ближайшему родителю, когда пользователь прокручивает страницу.
+  }
+ }
+}
+Липкий заголовок нельзя использовать в части шаблона Header. Нужно обернуть его в содержащий блок Group и применить липкое позиционирование к Group.
+
+
+  "shadow": {}, - поддержка box-shadow и пользовательские предустановки теней.
+{
+ "version": 2,
+ "settings": {
+  "shadow": {
+   "defaultPresets": true, - предустановки тени WordPress по умолчанию
+   "presets": [ - пользовательские тени
+    {
+     "name": "Natural",
+     "slug": "natural",
+     "shadow": "6px 6px 9px rgba(0, 0, 0, 0.2)"
+    }
+   ]
+  }
+ }
+}
+создаст:
+body { --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2); }
+
+  "spacing": {}, - отступы и интервалы
+{
+ "version": 2,
+ "settings": {
+  "spacing": {
+   "blockGap": null, - Включать ли опцию Block Spacing для блоков, которые ее поддерживают. Может быть логическим значением ( true/ false). По умолчанию null. Если установлено значение null, CSS, сгенерированный WordPress, также отключается.
+   "customSpacingSize": true, - Разрешить ли пользователям вводить пользовательские значения интервалов для блоков. По умолчанию true.
+   "margin": false, - Включать ли опцию Margin. По умолчанию false.
+   "padding": false, - Включать ли опцию Padding. По умолчанию false.
+   "spacingScale": {
+    "operator": "*",
+    "increment": 1.5,
+    "steps": 7,
+    "mediumStep": 1.5,
+    "unit": "rem"
+   }, - Объект конфигурации для определения пользовательской шкалы интервалов. WordPress определяет шкалу по умолчанию с семью шагами, которые увеличиваются на 1.5rem.
+   "spacingSizes": [], - Массив объектов нестандартного размера, которые могут переопределять масштаб интервала или добавлять его.
+   "units": [ "px", "em", "rem", "vh", "vw", "%" ] - Массив возможных единиц CSS, которые пользователи могут выбирать при добавлении собственного интервала.
+  }
+ }
+}
+Значение mediumStep всегда присваивается предустановке
+ --wp--preset--spacing--50, когда WordPress генерирует CSS, а другие предустановленные слаги в шкале расширяются вверх/вниз от этого среднего числа с шагом 10.
+
+  "typography": {}, - пользовательские размеры шрифтов и регистрация семейств шрифтов.
+{
+ "version": 2,
+ "settings": {
+  "typography": {
+   "customFontSize": true, - Разрешить ли пользователям вводить собственные размеры шрифта. По умолчанию true.
+   "fluid": false, - Включать ли плавные размеры шрифтов, которые увеличиваются на больших экранах и уменьшаются на меньших. Это можно переопределить для отдельных пользовательских размеров. По умолчанию false.
+   "fontSizes": [], - Массив объектов размера шрифта, который можно использовать для настройки доступных предустановок, из которых пользователи могут выбирать. WordPress регистрирует размеры по умолчанию small, medium, largeи x-large.
+   "dropCap": true, - Могут ли пользователи включать буквицу для первой буквы блока абзаца. По умолчанию true.
+   "fontStyle": true, - Могут ли пользователи выбирать собственный стиль шрифта. По умолчанию true.
+   "fontWeight": true, - Могут ли пользователи выбирать пользовательский вес шрифта. Диапазоны веса соответствуют стандартным весам шрифта от Thin до Black . По умолчанию true.
+   "letterSpacing": true, - Могут ли пользователи вводить пользовательское значение интервала между буквами. По умолчанию false.
+   "lineHeight": false, - Могут ли пользователи вводить пользовательскую высоту строки для текста. Нет возможности регистрировать предустановки высоты строки, поэтому эта опция включает полностью пользовательский ввод. По умолчанию false.
+   "textColumns": false, - Показывать ли параметр столбцов для текста блока. По умолчанию false.
+   "textDecoration": true, - Может ли пользователь задать оформление текста для текста блока. Доступные параметры: None , Underline и Strikethrough . По умолчанию true.
+   "textTransform": true, - Может ли пользователь изменять регистр букв для текста блока. Доступные параметры: None , Uppercase , Lowercase и Capitalize . По умолчанию true.
+   "writingMode": false - Включать ли ориентацию текста в интерфейсе, позволяя пользователям выбирать между горизонтальным и вертикальным текстом. По умолчанию false.
+  }
+ }
+}
+Регистрация системных шрифтов
+{
+ "$schema": "https://schemas.wp.org/trunk/theme.json",
+ "version": 2,
+ "settings": {
+  "typography": {
+   "fontFamilies": [
+    {
+     "name": "Primary",
+     "slug": "primary",
+     "fontFamily": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif"
+    },
+    {
+     "name": "Secondary",
+     "slug": "secondary",
+     "fontFamily": "system-ui, sans-serif"
+    }
+   ]
+  }
+ }
+}
+создаст:
+body {
+ --wp--preset--font-family--primary: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+ --wp--preset--font-family--secondary: system-ui, sans-serif;
+}
+Регистрация веб-шрифтов
+/assets
+    /fonts
+        /open-sans.woff2
+        /open-sans-italic.woff2
+
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "Primary",
+					"slug": "primary",
+					"fontFamily": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif"
+				},
+				{
+					"name": "Secondary",
+					"slug": "secondary",
+					"fontFamily": "'Open Sans', sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Open Sans",
+							"fontWeight": "300 800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/open-sans.woff2" ]
+						},
+						{
+							"fontFamily": "Open Sans",
+							"fontWeight": "300 800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/open-sans-italic.woff2" ]
+						}
+					]
+				}
+			]
+		}
+	}
+}
+создаст:
+body {
+	--wp--preset--font-family--primary: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+	--wp--preset--font-family--secondary: 'Open Sans', sans-serif;
+}
+{
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fluid": false,
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "13px"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "20px"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "36px"
+				},
+				{
+					"name": "Extra Large",
+					"slug": "x-large",
+					"size": "42px"
+				}
+			]
+		}
+	}
+}
+создаст:
+body {
+	--wp--preset--font-size--small: 13px;
+	--wp--preset--font-size--medium: 20px;
+	--wp--preset--font-size--large: 36px;
+	--wp--preset--font-size--x-large: 42px;
+} и классы
+.has-small-font-size{
+	font-size: var(--wp--preset--font-size--small) !important;
+}
+.has-medium-font-size{
+	font-size: var(--wp--preset--font-size--medium) !important;
+}
+.has-large-font-size{
+	font-size: var(--wp--preset--font-size--large) !important;
+}
+.has-x-large-font-size{
+	font-size: var(--wp--preset--font-size--x-large) !important;
+}
+
+{
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fluid": true
+		} 
+	}
+}
+body {
+	--wp--preset--font-size--small: 13px;
+	--wp--preset--font-size--medium: clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.852), 20px);
+	--wp--preset--font-size--large: clamp(22.041px, 1.378rem + ((1vw - 3.2px) * 1.983), 36px);
+	--wp--preset--font-size--x-large: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 2.413), 42px);
+}
+
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fluid": true,
+			"fontSizes": [
+				{
+					"name": "Small",
+					"size": "1rem",
+					"slug": "sm",
+					"fluid": false
+				},
+				{
+					"name": "Medium",
+					"size": "1.25rem",
+					"slug": "md",
+					"fluid": {
+						"min": "1rem",
+						"max": "1.5rem"
+					}
+				},
+				{
+					"name": "Large",
+					"size": "1.5rem",
+					"slug": "lg",
+					"fluid": {
+						"min": "1.25rem",
+						"max": "2rem"
+					}
+				}
+			]
+		}
+	}
+}
+создаст:
+body {
+	--wp--preset--font-size--sm: 1rem;
+	--wp--preset--font-size--md: clamp(1rem, 1rem + ((1vw - 0.2rem) * 1.136), 1.5rem);
+	--wp--preset--font-size--lg: clamp(1.25rem, 1.25rem + ((1vw - 0.2rem) * 1.705), 2rem);
+}
+
+  "useRootPaddingAwareAlignments": false, - заполнение корневого элемента
+
+  "blocks": {} - настройки параметров каждого блока.
+theme.json - на глобальном уровне, т.е. ко всем блокам.
+settings.block - настройки для отдельного блока.
+настройки, специфичные для блока, перезаписывают глобальные настройки.
+Все основные блоки WordPress имеют пространство имен core.
+https://developer.wordpress.org/block-editor/reference-guides/core-blocks/
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src
+ }
+
+ - styles: используется для применения цветов, размеров шрифтов, пользовательских CSS и других стилей к веб-сайту и блокам.
+ добавлять стили темы через styles позволяет пользователям настраивать их через Внешний вид > Редактор > Стили
+    theme.json поддерживает стили на трех разных уровнях:
+       - Корень (глобальный)
+       - Элементы
+       - Блоки
+ {
+	"version": 2,
+	"styles": {
+		"color": {
+			"text": "#000000",
+			"background": "#ffffff"
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"text": "#ffffff",
+					"background": "#000000"
+				}
+			}
+		},
+		"blocks": {
+			"core/code": {
+				"color": {
+					"text": "#ffffff",
+					"background": "#000000"
+				}
+			}
+		}
+	}
+}
+Псевдоклассы:
+{
+	"version": 2,
+	"styles": {
+		"elements": {
+			"button": {
+				"color": {
+					"text": "#ffffff",
+					"background": "#aa3f33"
+				},
+				":hover": {
+					"color": {
+						"background": "#822f27"
+					}
+				}
+			}
+		}
+	}
+}
+Вложенность:
+{
+	"version": 2,
+	"styles": {
+		"elements": {
+			"core/pullquote": {
+				"typography": {
+					"fontSize": "2.25rem"
+				},
+				"elements": {
+					"cite": {
+						"typography": {
+							"fontSize": "max( 50%, 1.5rem )"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+создаст:
+.wp-block-pullquote {
+	font-size: 2.25rem;
+}
+.wp-block-pullquote cite {
+	font-size: max( 50%, 1.5rem );
+}
+
+Вариативность:
+{
+	"version": 2,
+	"styles": {
+		"blocks": {
+			"core/button": {
+				"variations": {
+					"outline": {
+						"border": {
+							"color": "currentColor",
+							"style": "solid",
+							"width": "2px"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+Цвет фона сайта должен использовать base предустановленный.
+Основной цвет текста сайта должен использовать contrast предустановленный цвет.
+Цвета ссылок должны использовать primary предустановленные.
+Для ссылки на предустановки в theme.json существует специальный синтаксис,
+который можно использовать: var:preset|$feature|$slug.
+Таким образом base, в этом случае цвет будет var:preset|color|base.
+{
+	"version": 2,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#ffffff",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#000000",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#89cff0",
+					"name": "Primary",
+					"slug": "primary"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"text": "var:preset|color|contrast",
+			"background": "var:preset|color|base"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|primary"
+				}
+			}
+		}
+	}
+}
+
+синтаксис CSS var( --wp--preset--{$feature}--{$slug} )
+синтаксис WordPress var:preset|$feature|$slug работает намного лучше
+
+Пользовательский пресет:
+{
+	"version": 2,
+	"settings": {
+		"custom": {
+			"lineHeight": {
+				"xs": "1",
+				"sm": "1.25",
+				"md": "1.5",
+				"lg": "1.75"
+			}
+		}
+	},
+	"styles": {
+		"typography": {
+			"lineHeight": "var:custom|line-height|md"
+		}
+	}
+}
+
+ - customTemplates: Метаданные для пользовательских шаблонов, определенных в папке вашей темы /templates.
+Эти шаблоны отдельных постов/страниц/CPT(пользовательский тип записи).
+При регистрации этих шаблонов пользователи темы могут выбрать их на экране редактирования поста.
+Для блочных тем WordPress будет искать шаблоны в /templates папке темы.
+Поэтому, регистрируетя шаблон example, должен быть /templates/example.html файл.
+{
+	"version": 2,
+	"customTemplates": [
+		{
+			"name": "content",
+			"title": "Content,
+			"postTypes": [
+				"page",
+				"post"
+			]
+		}
+	]
+}
+
+ - templateParts: Метаданные для частей шаблона, определенных в папке вашей темы /parts.
+обычно используются как разделы, которые нужно повторно использовать в нескольких шаблонах.
+WordPress будет искать части шаблона в /parts папке темы.
+Поэтому при регистрации части шаблона с именем `example` должен быть /parts/example.html файл.
+{
+	"version": 2,
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		}
+	]
+}
+ - area: Область, к которой относится часть шаблона. Параметры по умолчанию: header, footer, и uncategorized.
+ Можно назначить любой пользовательской области.
+ - name: Имя файла части шаблона без расширения.
+ - title: Понятное для человека название шаблона, которое может быть переведено.
+
+ - patterns: Массив шаблонов, которые необходимо зарегистрировать из каталога patterns.
+
+Позволяет объединять шаблоны из каталога шаблонов WordPress с темой,
+без необходимости разрабатывать и создавать их самостоятельно.
+{
+	"version": 2,
+	"patterns": [
+		"fullscreen-cover-image-gallery", - pattern's slug
+		"hero-banner-with-overlap-images",
+		"mixed-shape-gallery"
+	]
+}
+
+https://developer.wordpress.org/themes/global-settings-and-styles/settings/settings-reference/
+
+
+
+{
+ "version": 2,
+ "settings": {
+  "appearanceTools": true
+ }
+}
+эквивалентно:
+{
+ "version": 2,
+ "settings": {
+  "border": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true
+  },
+  "color": {
+   "link": true
+  },
+  "dimensions": {
+   "minHeight": true
+  },
+  "position": {
+   "sticky": true
+  },
+  "spacing": {
+   "blockGap": true,
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "lineHeight": true
+  }
+ }
+}
+можно отключать свойства по одному.
+
+Вариации стиля сайта:
+файлы JSON с пользовательскими именами, которые хранятся в /styles папке темы - это по сути альтернативные версии theme.json.
+Это позволяет пользователям выбирать, какую вариацию ("скин" для темы) использовать на сайте.
+Заголовок вариации /styles/VariationsNane.json:
+{
+	"version": 2,
+	"title": "VariationsName",
+	"settings": {},
+	"styles": {}
+}
+Поле titleиспользуется для представления варианта в пользовательском интерфейсе.
+При выборе вариации данные файла JSON вариации сохраняются в базе данных как пользовательские настройки.
+Вариация стиля ограничена одним файлом JSON, который переопределяет основной theme.json,
+тогда как дочерняя тема может переопределять что угодно из своей родительской темы.
+В дочерней теме theme.json просто переопределяет файл родительской темы theme.json. 
+
+
+            </div>
+          </details>
+        </div>
+      </details>
+    </div>  
+  </div>
+</body>
+</html>
