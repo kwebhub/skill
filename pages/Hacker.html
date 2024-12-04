@@ -1569,6 +1569,115 @@ Ethernet Frame
             Delimiter  Address       Address  (2 bytes)   bytes    Sequence
 (7 bytes)   (1 bytes)  (6 bytes)     (6 bytes)                     (4 bytes)
 
+ICANN (Internet Corporation for Assigned Names and Numbers)
+«Корпорация по управлению доменными именами и IP-адресами».
+
+Service Name and Transport Protocol Port Number Registry:
+https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml
+
+
+Сокет - комбинация исходного IP-а   дреса и номера порта источника,
+или IP-адреса и номера порта назначения.
+192.168.1.5:1099 - сокет источника
+192.168.1.7:80 - сокет веб сервера
+
+Netstat – это сетевая утилита, которая может использоваться для проверки соединений.
+Параметр -n  - отображение IP-адресов и номеров портов в числовом виде.
+
+Порты назначаются и управляются организацией, известной как ICANN.
+Порты делятся на три категории и имеют число от 1 до 65535:
+
+Хорошо известные порты – порты назначения, связанные с общими сетевыми программами,
+идентифицируются как хорошо известные порты. Эти порты находятся в диапазоне от 1 до 1023.
+
+Зарегистрированные порты – порты от 1024 до 49151 можно использовать в качестве портов источника или назначения.
+Они могут быть использованы организациями для регистрации конкретных приложений, таких как программы чата.
+
+Частные порты – порты от 49 152 до 65 535, которые часто используются как порты источника.
+Эти порты могут использоваться любыми приложениями.
+
+nslookup - найти IP-адрес для любого доменного имени.
+
+
+ipconfig – перегляд інформації про IP-конфігурацію.
+ping     – перевірка з'єднань з іншими IP-хостами.
+netstat  – перегляд мережних з'єднань.
+tracert  – перегляд маршруту до місця призначення.
+nslookup – запит інформації про домен отримувача безпосередньо з серверу доменних імен.
+
+Команда ipconfig /all предназначена для просмотра расширенной информации,
+включая MAC-адреса, IP-адреса шлюза по умолчанию и DNS-серверы.
+Также указывается, включен ли протокол DHCP и выводятся данные адреса DHCP-сервера и информация об аренде.
+
+Если используется динамическое назначение IP-адресов,
+команда ipconfig /release удаляет существующие привязки адресов DHCP. 
+Команда ipconfig /renew запрашивает текущую конфигурацию с DHCP-сервера.
+Хост может содержать ошибочную или устаревшую информацию о конфигурации IP,
+и простое обновление этой информации – это все, что нужно для восстановления соединения.
+
+
+Ifconfig
+ifconfig
+ifconfig eth0 192.168.0.21 netmask 255.255.255.0 broadcast 192.168.0.255
+
+Ip
+ip a
+ip link set wlan0 down
+ifconfig wlan0 hw ether 14:de:d1:88:18:d4
+ip link set wlan0 up
+ip l
+
+
+lshw
+apt install lshw
+lshw -class network
+
+Ping and Traceroute
+ping ya.ru
+traceroute ya.ru
+traceroute -I ya.ru
+
+Netstat
+netstat -i
+netstat -lpn
+netstat -r
+
+MAC
+f8:db:88 - 
+f0:4d:a2 - 
+34:17:eb - 
+ip a
+macchanger -l
+ip link set wlp0s20f3 down
+sudo macchanger -m b2:aa:0e:56:ed:f7 enp0s3
+sudo macchanger -r wlp0s20f3
+sudo ip link set wlp0s20f3 up
+
+ssh
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl status ssh
+q
+sudo ufw allow ssh
+ip a
+sudo systemctl disable --now ssh
+sudo systemctl enable --now ssh
+
+WG
+Server:
+curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
+chmod +x wireguard-install.sh
+ip -br a - publik IP
+./wireguard-install.sh
+
+Client:
+sudo apt install wireguard
+sudo apt install resolvconf iptables
+sudo mv ~/wg0-client-losst.conf /etc/wireguard/wg0.conf
+wg-quick up wg0
+sudo wg show
+
+
   </div>
 </body>
 </html>
