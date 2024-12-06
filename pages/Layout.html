@@ -25,7 +25,8 @@
           <details class="menu__item"><!--HTML-->
             <summary>HTML</summary>
             <div class="menu__inner">
-              <p><a href="https://www.w3schools.com/tags/default.asp" target="_blank">HTML</a> (от англ. <i>HyperText Markup Language</i> — «язык гипертекстовой разметки») стандартизированный язык разметки
+              <p><a href="https://www.w3schools.com/tags/default.asp" target="_blank">HTML</a>
+                (от англ. <i>HyperText Markup Language</i> — «язык гипертекстовой разметки») стандартизированный язык разметки
                 документов во Всемирной паутине.
               </p>
 <pre>
@@ -1087,14 +1088,16 @@ font2web.com
   obj?.prop - <span class="menu__komment">вернёт obj.prop если obj есть, иначе undefined</span>
   obj?.[prop] - <span class="menu__komment">вернёт obj[prop] если obj есть, иначе undefined</span>
   obj.method?.() - <span class="menu__komment">вызовет obj.method если он есть, иначе undefined</span>
-</small>         
+  </small>         
 </details>
 <details><!--Types-->
-<summary>Types</summary>
-Тип - набор характеристик значения.
-Тип - не у переменной, а у значения.
-Тип переменной присваиваится вместе со значением.
-
+  <summary>Types</summary><small>
+    <em>Тип</em>:<span class="menu__komment">
+      - набор характеристик значения,
+      - не у переменной, а у значения,
+      - присваиваится переменной вместе со значением.
+    </span> 
+  </small>
   <details><!--Object-->
     <summary>Object</summary><small>
     Object {property1: value1, property2: value2}
@@ -1264,7 +1267,9 @@ font2web.com
   <img src="../img/js/Прототип.png" alt="">
 </details>
 <details><!--Регулярные выражения-->
-    <summary>Регулярные выражения</summary>
+    <summary>Регулярные выражения</summary><small>
+      Пока ничего нет
+    </small>
 </details>
 <details><!--Операторы-->
   <summary>Операторы</summary><small>
@@ -2961,7 +2966,7 @@ alert(elem.outerHTML); - < div id = "elem"><i>Привет</i> <i>Мир</i>< /d
 Обычно используют data. Изменяемый.
 < body>
 <i>Привет</i>
-< !--Комментарий-->
+Комментарий
 <.script>
 let comment = text.nextSibling;
 alert(comment.data); - Комментарий
@@ -2969,9 +2974,9 @@ alert(comment.data); - Комментарий
 < /body>
 <span class="menu__komment"></span>
 JS может прочитать if из свойства data и обработать инструкции:
-< !--if isAdmin-->
+if isAdmin
 < div><i>Добро пожаловать, Админ!</i>< /div>
-< !--/if--><span class="menu__komment"></span>
+/if <span class="menu__komment"></span>
 Лучше использовать DOM-свойства. Атрибуты используем тогда, когда нужны именно атрибуты.
 Например нестандартный атрибут. Если он начинается с data-, то нужно использовать dataset.
 < body data-about = "Elephants">
@@ -3045,7 +3050,7 @@ document.elementFromPoint(x, y) - <span class="menu__komment">возвращае
 CSS-событие transitioned - CSS-анимация завершена.
 Два способа задания стилей элементу:</span>
 < div class=" "> - <span class="menu__komment">создать класс в CSS и использовать его</span>
-< div style=" "> - <span class="menu__komment">писать стили в атрибуте style
+< div style="color:some"> - <span class="menu__komment">писать стили в атрибуте style
 JS может менять и классы CSS и свойство style.
 Лучше использовать классы. Свойство style только если класс не подходит.
 Для управления классами существует два DOM-свойства:</span>
@@ -3146,818 +3151,830 @@ IndexedDB работает на стороне клиента (в браузер
   <a href="../pages/jscode/rates.html" target="_blank">Rates</a>
   <a href="../pages/jscode/scroll.html" target="_blank">Scroll</a>
   <a href="../pages/jscode/sections.html" target="_blank">Sections</a>
-
 </details>
 <details><!--React-->
-  <summary>React</summary>
-  <img src="./img/React/react.png" alt="">
-  <img src="./img/React/React1.png" alt="">
-  <img src="./img/React/React2.png" alt="">
-  <img src="./img/React/React3.png" alt="">
-  <img src="./img/React/React4.png" alt="">
-  <img src="./img/React/React5.png" alt="">
-  <img src="./img/React/React6.png" alt="">
-  <img src="./img/React/React7.png" alt="">
-  <img src="./img/React/React8.png" alt="">
-  <img src="./img/React/React9.png" alt="">
-  <img src="./img/React/React10.png" alt="">
-  <img src="./img/React/React11.png" alt="">
-  <img src="./img/React/React12.png" alt="">
-  <img src="./img/React/React13.png" alt="">
-  <img src="./img/React/React14.png" alt="">
-  <img src="./img/React/React15.png" alt="">
-  <img src="./img/React/React16.png" alt="">
-  <img src="./img/React/React17.png" alt="">
-  <img src="./img/React/React18.png" alt="">
-  <img src="./img/React/React19.png" alt="">
-  <img src="./img/React/React20.png" alt="">
-  <img src="./img/React/React21.png" alt="">
-  <img src="./img/React/React22.png" alt="">
-  <img src="./img/React/React23.png" alt="">
-  <img src="./img/React/React24.png" alt="">
-  <img src="./img/React/React25.png" alt="">
-  <img src="./img/React/React26.png" alt="">
-  <img src="./img/React/React27.png" alt="">
-  <img src="./img/React/React28.png" alt="">
-  <img src="./img/React/React29.png" alt="">
-  <img src="./img/React/React30.png" alt="">
-  <img src="./img/React/React31.png" alt="">
-  <img src="./img/React/React32.png" alt="">
-  <img src="./img/React/React33.png" alt="">
-  <img src="./img/React/React34.png" alt="">
-<!--<pre>
-API (Application programming interface) - это контракт, который предоставляет программаю “Ко мне можно обращаться так и так, я обязуюсь делать то и это”.
-API -  это набор функций. Наборы формируются разработчиком по функционалу, по заказчику, по смыслу операций и т.д.
-
-- npx create-react-app название папки (проекта) - создаст папку с названием проекта и стартовым шаблоном внутри.
-
-JSX напоминает язык шаблонов, наделённый силой JavaScript.
-JSX - это синтаксический сахар для React.createElement.
-JSX - это расширение JS, чтобы объяснить React как выглядит UI.
-JSX производит элементы React.
-JSX преобразуется в JS функцию, которая возвращает JS объект. После компиляции каждое JSX-выражение становится обычным вызовом JS-функции, результат которого  - объект JS.
-
-Если разделить выражение на строки, то его нужно обернуть в ().
-
-<.div><./div> = <.div/> - если тэг пустой, то самозакрывающийся тэг.
-
-Запись атрибутов в camelCase.
-
-Кавычки (для строковых литералов), фигурные скобки (для JS-выражений), но не то и другое вместе.
-<.div tabIndex=”0”><./div> - литералы в строке
-<.img src={user.avatarUrl}> - JS выражения в { }
-
-const name = ‘Иван-Царевич’; - создали переменную
-const element = <.h1>Здравствуй, {name}!<./h1>; - создали элемент с переменной внутри. Элемент описывает то, что будет на экране.
-ReactDOM.render( 		- команда ReactDOM-у отрисовать созданный элемент
-element,
-document.getElementById(‘root’)	- внутри элемента страницы с выбранным id
-DOM-тэг <.div /> с маленькой буквы, а компонент <.Welcome /> - с большой.
-
-Первоначальный рендеринг компонента в DOM называется “монтированием” (mounting).
-Каждый раз когда DOM-узел, созданный компанентом, удаляется, происходит “размонтирование” (unmounting).
-Методы жизненного цикла:
-componentDidMount() {...} - запускается после того, как компонент отрендерился в DOM
-componentWillUnmount() {...} - запускается перед размонтированием
-
-Поля this.props и this.state в классах особенные, и их устанавливает сам React. Мы можем добавить новые.
-Единственное место где можно присвоить значение this.state - это конструктор, в остальных случаях только через изменение: this.state({comment: ‘Привет’}).
-Родитель-компонент передаёт своё состояние дочерним компонентам в виде пропса. Это однонаправленный поток данных.
-this.props и this.state могут обновляться асинхронно поэтому операции с ними нужно проводить внутри функции, получая текущие значения в качестве параметров: 
-this.setState((state.props) => ({counter: state.counter + props.increment}))
-
-Обработка событий:
-HTML: <.button onclick=”activateLasers()”>Активировать лазеры<./button>
-React: <.button onClick={activateLasers}>Активировать лазеры<./button>
-activateLasers - это функция-обработчик события
-
-В React есть соглашение об именах - on[имя события] для пропсов, отвечающих за события, и handle[имя события] для методов, обрабатывающих события.
-События в React именуются в camelCase.
-С JSX передаём функцию как обработчик события вместо строки:
-<.button onClick={activateLasers}>Активировать лазеры<./button>
-Чтобы предотвратить обработчик события по умолчанию, нужно вызвать preventDefault().
-function ActionLink() {
-function handleClick(e) {
-e.preventDefault()
-console.log(‘По ссылке кликнули’)
-}
-return (
-<.a href=”#” onClick={handleClick}>Нажми на меня<./a>
-)
-}
-
-Обычно, если ссылаться на метод как на ссылку - без вызова, т.е. без () поле него, например, onClick={this.handleClick}, этот метод нужно привязать к контексту:
-в конструкторе this.handleClick = this.handleClick.bind(this);
-в render() - <.button onClick={this.handleClick}>
-
-или так:
-handleClick = () => {console.log(‘значение this: ’, this)}
-<.button onClick={this.handleClick}><./button}
-
-или так:
-handleClick() {console.log(‘значение this: ’, this)}
-<.button onClick={() => this.handleClick()}
-
-Чтобы передать свой аргумент (например id строки) в обработчик события:
-е - событие React передаётся явно в стрелочных функциях и автоматически в bind.
-<.button onClick={this.deleteRow.bind(this, id)}>Удалить строку<./button> - Function.prototype.bind
-<.button onClick={(e) => this.deleteRow(id, e)}>Удалить строку<./button> - стрелочная функция - при каждом рендере создаётся новый коллбэк. Если этот коллбэк попадает как проп в дочерние компоненты, эти компоненты могут быть отрендерены снова. Снижение производительности.
-
-Структура проекта:
-index.html - точка входа в сайт
-index.js - подключает необходимое окружение (react, react-dom, index.css, App.js, serviceWorker.js)
-index.css - задаёт стили
-serviceWorker.js - 
-setupTests.js - 
-context.js - 
-App.js - подключает (объединяет) все компоненты
-Файл .css можно не импортировать, т.к. React ищет его сам в своей папке, либо в папках выше.
-
-Пропсы и композиция дают всю гибкость, необходимую для настройки внешнего вида и поведения компонента явным и безопасным способом.
-
-
-
-Компонент - это функция или класс (работают одинаково).
-Один компонент - одна ответственность.
-Компонент содержит логику и разметку в JSX.
-Компоненты можно вкладывать в друг друга.
-Чтобы создать компонент нужно в файле с расширением js написать в начале
-import React from ‘react’;
-и
-export default App;
-в конце.
-
-Сначала создаём самый маленький компонент, потом вверх по иерархии.
-
-Компонент в виде класса:
-class Example extends React.Component {
-constractor (props) { - конструктор объектов
-super (props) - обязательная ссылка на родителя
-this.state = { … } - задаём начальное состояние
-}
-render() { - обозначает React’y что нужно отобразиь на экране
-return… - возвращает JSX объект
-}
-}
-В JS - классах всегда нужно вызывать super  при объявлении конструктора подкласса.
-Все классовые React - компоненты, у которых есть constractor должны начинаться с вызова super (props).
-
-Компонент в виде функции (функциональный компонент):
-import React from ‘react’;     - подключения
-…
-const styles = { }
-
-function Example (props) { - принимает пропсы
-либо так:
-const Example = (props) => {
-логика на JS
-return …    - возвращает JSX объект
-разметка JSX
-}
-export default Example
-
-class Clock extends React.Component {    - компонент объявлен как класс
-constructor (props) {
-super (props);
-this.state = {date: new Date()}; - задаём начальное состояние при создании объекта
-}
-
-componentDidMount() {    - метод жизненного цикла, который React вызывает когда коипонент <.Clock /> примонтируется в DOM
-this.timerID = setInterval (     - вызываем метод tick() каждую секунду
-() => this.tick(), 1000
-);
-}
-
-componentWillUnmount() {    - метод жизненного цикла, который Ract вызывает когда компонент <.Clock /> удалится из DOM
-}
-
-tick() {
-this.setState({ - обновляем состояние компонента, присваивая новое значение свойства date
-date: new Date()
-});
-}
-
-render() {
-return (
-<.div>
-<.h1>Привет мир!<./h1>
-<.h2>Сейчас {this.state.date.toLocaleTimeString()}<./h2>
-<./div>
-);
-}
-}
-
-ReactDOM.render(
-<.Clock />,
-document.getElementById(‘root’)
-);
-
-Пропс:
-JSON 	- объявляем объект в переменную:
-const user = {
-firstName = ‘Марья’,
-lastName = ‘Маревна’
-}
-и обращаемся к пропсам:
-user.firstName
-user.lastName
-
-this.props - объект, кототрый содержит свойства, которые были определены тем, кто вызывает этот компонент.
-Вложенный контент может быть доступен через props.children
-
-function Square (props) {   - в props получаем значения value и onClick из класса Board ниже
-return(
-<.button className=”square” onClick={props.onClick}>   - возвращаем кнопку для подстановки
-{props.value}                                                                    в качестве объекта this в блок render
-<./button>                                                                              в классе Board
-)                                                                                                
-}
-class Board extends React.Component{
-renderSquare(i){    - props i из блока render() ниже
-return(    - в компанент Square втуливаем значения value и onClick
-<.Square
-value = {this.props.square[i]} - собираем получаемые пропсы в массив
-onClick = {() = this.props.onClick(i)} - создаём обработчик на событие onClick для каждого пропса i
-/>
-)
-}
-render() {
-return(
-<.div>
-<.div className=”board-row”> - передаем в функцию renderSquaer (props.value) - 0 или 1 или 2
-  {this.renderSquare(0)} - первому объекту this передаём value = 0
-  {this.renderSquare(0)} - второму объекту this передаём value = 1
-  {this.renderSquare(0)} - третьему объекту this передаём value = 2
-<./div>
-<./div>
-)
-}
-}
-
-function Welcome(props) {        - компонент объявлен как функция
-return <.h1>Привет, {props.name}!<./h1>;
-}
-или так:
-class Welcome extends React.Component {      - компонент объявлен как класс
-render () {
-return <.h1>Привет, {this.props.name}!<./h1>;
-}
-}
-
-const element = <.Welcome name=”Алиса” />;
-ReactDOM.render(
-element,
-document.getElementById(‘root’)
-);
-
-name=”Алиса” - передаётся в функцию Welcome в виде объекта {name: ‘Алиса’} - это props.
-Функция Welcome возвращает элемент <.h1>Привет, Алиса!<./h1> в ReactDOM.
-
-Пропсы нужно только читать. React-компоненты не меняют свои входные данные.
-Компонент никогда не должен что-то записывать в свои пропсы:
-function sum(a, b) {
-return a + b;
-}
-
-а вот так нельзя:
-function withdraw(account, amount) {
-account.total -= amount;
-}
-
-Передать пропс можно от родителя к потомку пропустив несколько промежуточных потомков напрямую с помощью React.createContext(). Для этого создаём отдельный файл context.js и используем <Context.Provider>.
-
-Файл context.js:
-import React from ‘react’
-const Context = React.createContext()
-export default Context
-
-<.Context.Provider vakue={{ … }}>     - с помощью Context.Provider передаю любое JS сквозь всех потомков
-<.div className=”...”>
-<.h1>Hello world!<./h1>
-<.Example />
-<./div>
-<./Context.Provider>
-
-Состояние:
-Сохранять и изменять можно только состояния (state).
-Конкретный state контролируется и доступен только конкретному компоненту.
-Состояние содержит данные, специфичные для этого компонента. Они могут изменятся со временем.
-Состояние определяется пользователем и должно быть простым объектом JS.
-Состояние можно изменять только через setState(), присвоить состоянию значение напрямую можно только в конструкторе.
-Компонент может передать своё состояние вниз по дереву в виде пропсов дочерних компонентов.
-Этот процесс называется “нисходящим” (“top-down”) или “однонаправленным” (“unidirectional”) потоком данных.
-
-Если несколько компонентов должны отражать одни и теже изменяющиеся данные, то нужно поднимать общее состояние до ближайшего общего предка.
-Чтобы собрать данные из нескольких дочерних элементов, или чтобы дать возможность двум компонентам общаться, вам нужно объявить общее состояние внутри родительского компонента. Родительский компонент может передать состояние обратно дочерним элементам с помощью пропсов.
-Это поддерживает синхронизацию дочерних компонентов друг с другом и с родительким компонентом.
-
-Хуки:
-Хуки - вспомогательные функции
-const [todos, setTodos] = React.useState([ ])
-
-Хуки  - это функции, с которыми можно “подцепиться” к состоянию и к методам жизненного цикла React из функциональных компонентов.
-Хуки не работают в классах, а используются вместо них.
-Хуки вызывают только на верхнем уровне (не в циклах, условиях и т.д.)
-Хуки вызывают только из функциональных компонентов React, не из обычных JS-функций.
-Если имя функции начинается с use (useSamething) и использует другие хуки, то такая функция это пользовательский хук.
-
-useState(i) - возвращает массив из двух элементов: состояние (это state - состояние) и функцию, которая изменяет это состояние. Имена даём возвращаемому состоянию и функции произвольно.
-
-useEffect(i) - React запускает эффекты useEffect(() => {...}) после каждого рендера, включая первый рендер.
-
-useEffect(() => {
-fetch(‘http://…’)
-.then(responce=>responce.json())
-.then(todos=>{
-setTodos(todos)
-})
-}, [])
-
-вызвать хук можно либо
-import React, { useEffect } from ‘react’
-useEffect(i) {...}
-либо
-React.useEffect(i) {...}
-
-Сравнение хука и класса:
-Хук:
-import React, {useState} from ‘react’ - подключение хука
-function Example() {
-const [count, setCount] = useState(0) - 0 это начальное состояние, это может быть не объект.
-return (
-<.div>
-<.p>Вы нажали {count} раз <./p>
-<.button onClick={() => setCount(count + 1)}>
-Нажми на меня
-<./button>
-<./div>
-)
-}
-
-Класс:
-class Example extends React.Component {
-constractor (props) {
-super (props)
-this.state = {
-count: 0
-}
-}
-render () {
-return (
-<.div>
-<.p>Вы нажали {this.state.count} раз <./p>
-<.button onClick={() => this.setState({
-  count.this.state.count + 1})}>
-    Нажми на меня
-<./button>
-<./div>
-)
-}
-}
-Чтобы наделить функциональный компонент состоянием нужно либо преобразовать его в класс, либо добавить в него хук.
-React запоминает значение переменной состояния между вызовами функции.
-Итого:
-подключаем хук: import React, {useState} from ‘react’
-добавляем переменную в функцию: const [count, setCount] = useState(0)
-вызываем функцию изменения: <.button onClick={() => setCount(count + 1)}>
-
-Хук еффекта выполняет побочные эффекты:
-загрузка данных,  оформление подписки и изменение DOM вручную и представляет собой совокупность методов componentDidMount, componentDidUpdate и componentWillUnmount.
-
-Эффекты позволяют выполнить дополнительный код после того, как React обновил DOM, т.е. после каждого рендера.
-Любой эффект может возвратить функцию, которая сбросит его.
-React будет сбрасывать эффект перед тем, как компонент размонтируется. Например оформление и отмена подписки:
-import React , {useState, useEffect} from ‘react’
-function FriendStatus(props) {
-const [isOnline, setIsOnline] = useState(null)
-useEffect(() => {
-function handleStatusChange(status) {
-setIsOnline(status.isOnline)
-}
-ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
-return function cleanup() {             - сброс эффекта
-ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
-}
-})
-if (isOnline === null) {
-return ‘Загрузка…’
-}
-return isOnline ? ‘В сети’ : ‘Не в сети’
-}
-Чтобы React выполнял эффект только в случае изменения нужен второй аргумент в виде массива, с которым будет сравниваться значение первого аргумента. При каждом рендере react сравнивает новое значение переменной в первом аргументе со старым значением переменной, указанным во втором аргументе (в массиве).
-useEffect(() => {
-function handleStatusChange(status) {
-setIsOnline(status.isOnline)
-}
-ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
-return() => {
-ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
-}
-}, - стрелочная функция это первый аргумент эффекта
-[props.friend.id]) - это второй аргумент эффекта со старым значением переменной, по которому будет сравнение первого аргумента: повторно подписаться только если props.friend.id изменился.
-
-Обычный эффект без сброса:
-import React, {useState, useEffect} from ‘react’
-function Example() {
-const [count, setCount] = useState(0)
-useEffect(() => {
-document.title = `Вы нажали ${count} раз`
-}, [count]) - перезапускать эффект только если count поменялся
-return (
-<.div>
-<.p>Вы нажали {count} раз<./p>
-<.button onClick={() => setCount(count + 1)}>
-Нажми на меня
-<./button>
-<./div>
-)
-}
-Для корректной работы с хуками нужно установить плагин для ESLint:
-npm i eslint-plugin-react-hooks --save -dev
-
-
-useContext:
-import React, {useContext} from ‘react’
-const themes = {
-light: {
-foreground: “#000000”,
-background: “#eeeeee”
-}
-dark: {
-foreground: “#ffffff”,
-background: “#222222”
-}
-}
-const ThemeContext = React.createContext(themes.light)    - создаём объект контекста со свойством light
-function App() {
-return(
-<.Theme	Context.Provider value={themes.dark}> - значение value определяет текущее значение
-<.Toolbar />						передаваемого в Toolbar контекста. При обновлении 
-<./ThemeContext.Provider>				значения - новый рендер.
-)								Меняем контекст на тёмную тему.
-}
-function Toolbar (props) {   - передаём контекст потомку
-return(
-<.div>
-<.ThemedButton/>
-<./div>
-)
-}
-function ThemedButton() {
-const theme = useContext(ThemeContext)  - используем контекст с тёмной темой
-return (
-<.button style={{background: theme.background, color: theme.foreground}}>
-Я стилизован темой из контекста!
-<./button>
-)
-}
-
-Управляемый компонент:
-Если форму обрбатывать с помощью JS-функции, у которой есть доступ к введённым данным, то такая форма называется “управляемым компонентом”. Библиотека Formik.
-Или, другими словами, управляемый компонент - это элемент формы рендер, поведение при пользовательском вводе и значение которого контролирует React.
-class NameForm extends React.Component{
-constructor(props){
-super(props)
-this.state={value:’ ’}
-this.handleChange=this.handleChange.bind(this)
-this.handleSubmit=this.handleSubmit.bind(this)
-}
-handleChange(event) {
-this.setState({value: event.target.value})
-}
-handleSubmit(event){
-alert(‘Отправленное имя: ’ + this.state.value)
-event.preventDefault()			- отменяем действе по умолчанию
-}
-render() {
-return (
-<.form onSubmit={this.handleSubmit}>
-<.label>
-Имя:
-<.input type=”text” value={this.state.value} onChange={this.handleChange}/>
-<./label>
-<.input type=”Submit” value=”Отправить” />
-<./form>
-)
-}
-}
-в атрибуте value всегда будет отражаться React состояние this.state.value, а каждое нажатие клавиш через handleChange будет это состояние изменять и React будет обновлять поле ввода по мере печатанья.
-<.textarea><./textarea> также как <.input /> - 
-<.textarea value={this.state.value} onChange={this.handleChange}>
-Чтобы использовать несколько input’ов нужно каждому дать свой атрибут name.
-<.select>
-<.option value=”grapefruit”>Грейпфрут<./option>
-<.option value=”lime”>Лайм<./option>
-<.option selected value=”coconut”>Кокос<./option>
-<.option value=”mango”>Манго<./option>
-<./select>
-если в value передать массив, то можно выбрать несколько опций:
-<.select multiple={true} value={[‘Б’, ‘В’]}>
-в React выбранный элемент присваивается в конструкторе по умолчанию: this.state={value=’cocnut’}, а потом изменяется через setState: <select value={this.state.value} onChange={this.handleChange}></select>
-Если установить значение value, то пользователь изменить его не сможет: 
-ReactDOM.render(<.input value=”Привет”/>).
-Для любых изменяемых данных в React -приложении должен быть один “источник истины” (state).
-Обычно состояние сначала добавляется к компоненту, которому оно требуется для рендера. Затем, если другие компоненты также нуждаются в нём, вы можете поднять его до ближайшего общего предка.
-Вместо того, чтобы пытаться синхронизировать состояние между различными компонентами, вы должны полагаться на однонаправленный поток данных - это водопад пропсов от родителя к потомку, в который каждый компонент добавляет свой state в виде пропса (props).
-
-Композиция:
-Вместо наследования:
-function FancyBorder(props) {
-return (
-<.div className={‘FancyBorder FancyBorder-’ + props.color}> - поместить в div всё, что выделено 
-{props.children}								тэгом <.FancyBorder>
-<./div>
-)
-}
-function Dialog(props) {
-return (
-<.FancyBorder color=”blue”> - определяю тэг <.FancyBorder> и его содержимое для подстановки
-<.h1 className=”Dialog-title”>
-{props.title}
-<./h1>
-<.p className=”Dialog-message”>
-{props.message}
-<./p>
-<./FancyBorder>
-)
-}
-function WelcomDialog() { - определяю компонент для рендера и задаю значение пропсов
-return (
-<.Dialog
-title=”Welcom”
-message=”Thank you for visiting our spacecraft!” />
-)
-}
-ReactDOM.render(
-<.WelcomDialog />,
-document.getElementById(‘root’)
-)
-
-Ключи:
-Ключи помогают React определить, какие элементы были изменены, добавлены или удалены.
-const todoItems = todos.map((todo) => 
-<.li key={todo.id}>
-{todo.text}
-<./li>
-)
-function NumberList(props) {
-const numbers = props.numbers
-const listItems = numbers.map((number) => - функция map() преобразует массив numbers в список
-<.ListItem
-key={number.toString()}    -ключ нужно определить внутри массива, ключ это строка
-value={number}
-/>
-)
-return (
-<.ul>
-{listItems}
-<./ul>
-)
-}
-или так:
-function NumberList(props) {
-const numbers = props.numbers
-return (
-<.ul>
-{numbers.map((number) => 
-<.ListItem
-key={number.toString()}
-value={number}
-/>
-)}
-<./ul>
-)
-}
-
-Валидирование типов:
-Библиотека prop-types нужна для задания типов переменных: npm i prop-types.
-
-import PropTypes from ‘prop-types’
-
-function Example ({prop1, prop2, prop3}) {...}
-Example.propTypes={
-prop1: PropTypes.object.isRequired,
-prop2: PropTypes.number,
-prop3: PropTypes.func.isRequired,
-}
-export default Example
-
-Условный рендеринг:
-if (isLoggedIn) {
-return <.UserGreeting />;
-}
-return <.GuestGreeting />;
-
-{unreadMessages.length > 0 &&
-<.h2>
-у вас {unreadMessages.length} непрочитанных сообщений.
-<./h2>
-}
-Пользователь <.b>{isLoggedIn ? ‘сейчас’ : ‘не’}<./b> на сайте.
-</pre>-->
+  <summary>React</summary><small>
+    npx create-react-app название папки (проекта)
+    <span class="menu__komment">  - создаст папку с названием проекта и стартовым шаблоном внутри.</span>
+    <em>JSX</em>:<span class="menu__komment">
+      - это синтаксический сахар для React.createElement.
+      - это расширение JS, чтобы объяснить React как выглядит UI.
+      - напоминает язык шаблонов, наделённый силой JavaScript.
+      - производит элементы React.
+      - преобразуется в JS функцию, которая возвращает JS объект.
+      После компиляции каждое JSX-выражение становится обычным вызовом JS-функции, результат которого  - объект JS.</span>
+
+    < div >< /div > = < div /><span class="menu__komment"> - если тэг пустой, то самозакрывающийся тэг.
+      Если разделить выражение на строки, то его нужно обернуть в ().
+      Запись атрибутов в camelCase.
+      Кавычки (для строковых литералов), фигурные скобки (для JS-выражений), но не то и другое вместе.</span>
+
+    < div tabIndex=”0” >< /div ><span class="menu__komment"> - литералы в строке</span>
+    < img src={user.avatarUrl} ><span class="menu__komment"> - JS выражения в { }</span>
+
+    const name = ‘Иван-Царевич’;<span class="menu__komment"> - создали переменную</span>
+    const element = < h1 >Здравствуй, {name}!< /h1 >;<span class="menu__komment">
+      - создали элемент с переменной внутри.
+      Элемент описывает то, что будет на экране.</span>
+    ReactDOM.render(    <span class="menu__komment"> - команда ReactDOM-у отрисовать созданный элемент</span>
+    element,
+    document.getElementById('root'))<span class="menu__komment"> - внутри элемента страницы с выбранным id</span>
+
+    < div /><span class="menu__komment"> - DOM-тэг с маленькой буквы</span>
+    < Welcome /><span class="menu__komment"> - компонент с большой.
+
+    Первоначальный рендеринг компонента в DOM называется “монтированием”</span> - (mounting).
+    <span class="menu__komment">Каждый раз когда DOM-узел, созданный компанентом, удаляется, происходит “размонтирование”</span> - (unmounting).
+
+    <em>Методы жизненного цикла</em>:
+    componentDidMount() {...}<span class="menu__komment"></span> - запускается после того, как компонент отрендерился в DOM</span>
+    componentWillUnmount() {...}<span class="menu__komment"> - запускается перед размонтированием
+
+    Поля <em>this.props</em> и <em>this.state</em> в классах особенные, и их устанавливает сам React.
+    Присвоить значение this.state можно только в конструкторе,
+    в остальных случаях только через изменение:</span> this.state({comment: ‘Привет’}).
+    <span class="menu__komment">Родитель-компонент передаёт своё состояние дочерним компонентам в виде пропса.
+    Это однонаправленный поток данных.</span>
+
+    <span class="menu__komment"><em>this.props</em> и <em>this.state</em> могут обновляться асинхронно поэтому операции с ними нужно проводить внутри функции,
+    получая текущие значения в качестве параметров:</span>
+    this.setState((state.props) => ({counter: state.counter + props.increment}))
+
+    <em>Обработка событий</em>:
+    <span class="menu__komment">HTML:</span> < button onclick="activateLasers()" > Активировать лазеры < /button >
+    <span class="menu__komment">React:</span> < button onClick={activateLasers} > Активировать лазеры < /button >
+    <span class="menu__komment">activateLasers - это функция-обработчик события
+
+    В React есть соглашение об именах:</span>
+    on[имя события]<span class="menu__komment"> - для пропсов, отвечающих за события,</span>
+    handle[имя события]<span class="menu__komment"> - для методов, обрабатывающих события.
+    События в React в camelCase.
+
+    Чтобы предотвратить обработчик события по умолчанию, нужно вызвать preventDefault().</span>
+    function ActionLink() {
+      function handleClick(e) {
+        e.preventDefault()
+        console.log(‘По ссылке кликнули’)
+      }
+      return (< a href=”#” onClick={handleClick} > Нажми на меня < /a >)
+    }<span class="menu__komment">
+
+    Если ссылаться на метод как на ссылку - без вызова, т.е. без () поcле него, например, onClick={this.handleClick},
+    этот метод нужно привязать к контексту:
+    в конструкторе</span> this.handleClick = this.handleClick.bind(this);
+    <span class="menu__komment">в render()</span> < button onClick={this.handleClick} >
+    <span class="menu__komment">или так:</span>
+    handleClick = () => {console.log('значение this: ', this)}
+    < button onClick={this.handleClick} > Нажми на меня < /button >
+    <span class="menu__komment">или так:</span>
+    handleClick() {console.log('значение this: ', this)}
+    < button onClick={this.handleClick()} > Нажми на меня < /button >
+
+    <span class="menu__komment">Чтобы передать свой аргумент (например id строки) в обработчик события:</span>
+    е<span class="menu__komment"> - событие React передаётся явно в стрелочных функциях и автоматически в bind.</span>
+    <.button onClick={this.deleteRow.bind(this, id)} > Удалить строку < /button > - Function.prototype.bind
+    < button onClick={(e) => this.deleteRow(id, e)}>Удалить строку< /button><span class="menu__komment">
+    - стрелочная функция - при каждом рендере создаётся новый коллбэк.
+    Если этот коллбэк попадает как проп в дочерние компоненты, эти компоненты могут быть отрендерены снова.
+    Снижение производительности.</span>
+
+    <em>Структура проекта</em>:
+    index.html<span class="menu__komment"> - точка входа в сайт</span>
+    index.js<span class="menu__komment"> - подключает необходимое окружение (react, react-dom, index.css, App.js, serviceWorker.js)</span>
+    index.css<span class="menu__komment"> - задаёт стили</span>
+    serviceWorker.js<span class="menu__komment"></span>
+    setupTests.js<span class="menu__komment"></span>
+    context.js<span class="menu__komment"></span>
+    App.js<span class="menu__komment"> - подключает (объединяет) все компоненты
+    Файл .css можно не импортировать, т.к. React ищет его сам в своей папке, либо в папках выше.</span>
+
+    <em>Компонент</em>:<span class="menu__komment">
+    Это функция или класс (работают одинаково).
+    Один компонент - одна ответственность.
+    Компонент содержит логику и разметку в JSX.
+    Компоненты можно вкладывать в друг друга.
+
+    Чтобы создать компонент нужно в файле с расширением js написать:</span>
+    import React from 'react';<span class="menu__komment"> - в начале
+    и</span>
+    export default App;<span class="menu__komment"> - в конце.
+
+    Сначала создаём самый маленький компонент, потом вверх по иерархии.</span>
+
+    <em>Компонент в виде класса</em>:
+    class Example extends React.Component {
+      constractor (props) {<span class="menu__komment"> - конструктор объектов</span>
+      super (props)<span class="menu__komment"> - обязательная ссылка на родителя</span>
+      this.state = { … }<span class="menu__komment"> - задаём начальное состояние</span>
+    }
+      render() {<span class="menu__komment"> - говорит React что нужно отобразиь на экране</span>
+        return…<span class="menu__komment"> - возвращает JSX объект</span>
+      }
+    }
+
+    <span class="menu__komment">В JS - классах всегда нужно вызывать <em>super</em> при объявлении конструктора подкласса.
+    Все классовые React - компоненты, у которых есть constractor 
+    должны начинаться с вызова super (props).</span>
+
+    <em>Компонент в виде функции (функциональный компонент)</em>:
+    import React from 'react';<span class="menu__komment"> - подключение</span>
+    …
+    const styles = { }
+
+    function Example (props) {<span class="menu__komment"> - принимает пропсы
+      либо так:</span>
+      const Example = (props) => {{<span class="menu__komment">
+        логика на JS
+        разметка JSX</span>
+        return …<span class="menu__komment"></span>    - возвращает JSX объект</span>
+        
+      }
+      export default Example
+    }
+
+    class Clock extends React.Component {<span class="menu__komment"> - компонент объявлен как класс</span>
+      constructor (props) {
+        super (props);
+        this.state = {date: new Date()};<span class="menu__komment"> - задаём начальное состояние при создании объекта</span>
+      }
+
+      componentDidMount() {<span class="menu__komment">
+        метод жизненного цикла, который React вызывает когда коипонент < Clock /> примонтируется в DOM</span>
+        this.timerID = setInterval (<span class="menu__komment"> - вызываем метод tick() каждую секунду</span>
+        () => this.tick(), 1000
+        );
+      }
+
+      componentWillUnmount() {<span class="menu__komment">
+        метод жизненного цикла, который Ract вызывает когда компонент < Clock /> удалится из DOM</span>
+      }
+
+      tick() {
+        this.setState({<span class="menu__komment">
+          обновляем состояние компонента, присваивая новое значение свойства date</span>
+          date: new Date()
+        });
+      }
+
+      render() {
+        return (
+          < div >
+            < h1 > Привет мир! < /h1 >
+            < h2 > Сейчас {this.state.date.toLocaleTimeString()} < /h2 >
+          < /div >
+        );
+      }
+    }
+
+    ReactDOM.render(
+      < Clock />,
+      document.getElementById('root')
+    );
+
+    <em>Пропс</em>:
+    JSON<span class="menu__komment"> - объявляем объект в переменную:</span>
+    const user = {
+      firstName = ‘Марья’,
+      lastName = ‘Маревна’
+    }<span class="menu__komment">
+    и обращаемся к пропсам:</span>
+    user.firstName
+    user.lastName
+
+    <em>this.props</em><span class="menu__komment"> - объект, кототрый содержит свойства, которые были определены тем, кто вызывает этот компонент.
+    Вложенный контент может быть доступен через</span> props.children
+
+    function Square (props) {<span class="menu__komment"> - в props получаем значения value и onClick из класса Board ниже</span>
+    return(< button className=”square” onClick={props.onClick} > {props.value} < /button >)}
+    <span class="menu__komment"> - возвращаем кнопку для подстановки в качестве объекта this в блок render в классе Board</span>
+                                                                                                 
+    class Board extends React.Component{
+      renderSquare(i){<span class="menu__komment"> - props i из блока render() ниже</span>
+        return(<span class="menu__komment"> - в компанент Square втуливаем значения value и onClick</span>
+          < Square
+            value = {this.props.square[i]}<span class="menu__komment"> - собираем получаемые пропсы в массив</span>
+            onClick = {() = this.props.onClick(i)}<span class="menu__komment"> - создаём обработчик на событие onClick для каждого пропса i</span>
+          />
+        )
+      }
+      render() {
+        return(
+          < div className=”board-row”><span class="menu__komment"> - передаем в функцию renderSquaer (props.value) - 0 или 1 или 2</span>
+            {this.renderSquare(0)}<span class="menu__komment"> - первому объекту this передаём value = 0</span>
+            {this.renderSquare(1)}<span class="menu__komment"> - второму объекту this передаём value = 1</span>
+            {this.renderSquare(2)}<span class="menu__komment"> - третьему объекту this передаём value = 2</span>
+          < /div >
+        )
+      }
+    }
+
+    function Welcome(props) {<span class="menu__komment"> - компонент объявлен как функция</span>
+      return < h1 >Привет, {props.name}!< /h1 >;
+    }<span class="menu__komment">
+    или так:</span>
+    class Welcome extends React.Component {<span class="menu__komment"> - компонент объявлен как класс</span>
+      render () {
+        return < h1 >Привет, {this.props.name}!< /h1 >;
+      }
+    }
+
+    const element = < Welcome name="Алиса" />;
+    ReactDOM.render(
+      element,
+      document.getElementById('root')
+    );<span class="menu__komment">
+    name=”Алиса” - передаётся в функцию Welcome в виде объекта {name: 'Алиса'} - это props.
+    Функция Welcome возвращает элемент</span> < h1 >Привет, Алиса!< /h1 ><span class="menu__komment"> в ReactDOM.
+    
+    Пропсы нужно только читать.
+    React-компоненты не меняют свои входные данные.
+    Компонент никогда не должен что-то записывать в свои пропсы:</span>
+    function sum(a, b) {
+      return a + b;
+    }<span class="menu__komment">
+    а вот так нельзя:</span>
+    function withdraw(account, amount) {
+      account.total -= amount;
+    }
+    <span class="menu__komment">
+    Передать пропс можно от родителя к потомку пропустив несколько промежуточных потомков
+    напрямую с помощью</span> React.createContext().<span class="menu__komment">
+    Для этого создаём отдельный файл context.js и используем</span> < Context.Provider >.
+
+    <em>Файл context.js</em>:
+    import React from 'react'
+    const Context = React.createContext()
+    export default Context
+
+    < Context.Provider vakue={{ … }} ><span class="menu__komment"> - с помощью Context.Provider передаю любое JS сквозь всех потомков</span>
+    < div className=”...” >
+    < h1 > Hello world! < /h1 >
+    < Example />
+    < /div >
+    < /Context.Provider >
+
+    <em>Состояние</em>:<span class="menu__komment">
+    Сохранять и изменять можно только состояния <em>(state)</em>.
+    Конкретный state контролируется и доступен только конкретному компоненту.
+    Состояние содержит данные, специфичные для этого компонента. Они могут изменятся со временем.
+    Состояние определяется пользователем и должно быть простым объектом JS.
+    Состояние можно изменять только через setState(), присвоить состоянию значение напрямую можно только в конструкторе.
+    Компонент может передать своё состояние вниз по дереву в виде пропсов дочерних компонентов.
+    Этот процесс называется “нисходящим” (“top-down”) или “однонаправленным” (“unidirectional”) потоком данных.
+
+    Если несколько компонентов должны отражать одни и теже изменяющиеся данные, 
+    то нужно поднимать общее состояние до ближайшего общего предка.
+    Чтобы собрать данные из нескольких дочерних элементов, или чтобы дать возможность двум компонентам общаться,
+    вам нужно объявить общее состояние внутри родительского компонента. 
+    Родительский компонент может передать состояние обратно дочерним элементам с помощью пропсов.
+    Это поддерживает синхронизацию дочерних компонентов друг с другом и с родительким компонентом.</span>
+
+    <em>Хуки</em>:
+    const [todos, setTodos] = React.useState([ ])<span class="menu__komment">
+    Это функции, с которыми можно “подцепиться” к состоянию
+    и к методам жизненного цикла React из функциональных компонентов.
+    Хуки не работают в классах, а используются вместо них.
+    Хуки вызывают только на верхнем уровне (не в циклах, условиях и т.д.)
+    Хуки вызывают только из функциональных компонентов React, не из обычных JS-функций.
+    Если имя функции начинается с use (useSamething) и использует другие хуки,
+    то такая функция это пользовательский хук.</span>
+
+    <em>useState(i)</em><span class="menu__komment"> - возвращает массив из двух элементов:
+      состояние (это state - состояние) и функцию, которая изменяет это состояние.
+      Имена даём возвращаемому состоянию и функции произвольно.</span>
+
+    <em>useEffect(i)</em><span class="menu__komment"> - React запускает эффекты</span> useEffect(() => {...})<span class="menu__komment"> после каждого рендера, включая первый рендер.</span>
+
+    useEffect(() => {
+    fetch('http://…')
+      .then(responce=>responce.json())
+      .then(todos=>{
+        setTodos(todos)
+      })
+    }, [])
+    <span class="menu__komment">
+    вызвать хук можно либо</span>
+    import React, { useEffect } from 'react'
+    useEffect(i) {...}<span class="menu__komment">
+    либо</span>
+    React.useEffect(i) {...}
+
+    <span class="menu__komment">Сравнение хука и класса</span>:
+    <em>Хук</em>:
+    import React, {useState} from 'react'<span class="menu__komment"> - подключение хука</span>
+    function Example() {
+      const [count, setCount] = useState(0)<span class="menu__komment"> - 0 это начальное состояние, это может быть не объект.</span>
+      return (
+        < div >
+          < p >Вы нажали {count} раз < /p >
+          <.button onClick={() => setCount(count + 1)} > Нажми на меня < /button >
+        < /div >
+      )
+    }
+
+    <em>Класс</em>:
+    class Example extends React.Component {
+      constractor (props) {
+        super (props)
+        this.state = {
+          count: 0
+        }
+      }
+      render () {
+        return (
+          < div >
+            < p >Вы нажали {this.state.count} раз < /p >
+            <.button onClick={() => this.setState({
+              count.this.state.count + 1})}>
+                Нажми на меня
+            < /button >
+          < /div >
+        )
+      }
+    }<span class="menu__komment">
+    Чтобы наделить функциональный компонент состоянием нужно либо преобразовать его в класс, либо добавить в него хук.
+    React запоминает значение переменной состояния между вызовами функции.</span>
+    <em>Итого</em>:
+    import React, {useState} from 'react'<span class="menu__komment"> - подключаем хук</span>
+    const [count, setCount] = useState(0)<span class="menu__komment"> - добавляем переменную в функцию</span>
+    <.button onClick={() => setCount(count + 1)}><span class="menu__komment"> - вызываем функцию изменения
+
+    <em>Хук еффекта выполняет побочные действия</em>:
+     - загрузка данных
+     - оформление подписки и изменение DOM вручную
+     - представляет собой совокупность методов</span> componentDidMount, componentDidUpdate и componentWillUnmount.
+    <span class="menu__komment">
+    Эффекты позволяют выполнить дополнительный код после того, как React обновил DOM, т.е. после каждого рендера.
+    Любой эффект может возвратить функцию, которая сбросит его.
+    React будет сбрасывать эффект перед тем, как компонент размонтируется. Например оформление и отмена подписки:</span>
+    import React , {useState, useEffect} from 'react'
+    function FriendStatus(props) {
+      const [isOnline, setIsOnline] = useState(null)
+      useEffect(() => {
+        function handleStatusChange(status) {
+          setIsOnline(status.isOnline)
+        }
+        ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+        return function cleanup() {<span class="menu__komment"> - сброс эффекта</span>
+          ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+        }
+      })
+      if (isOnline === null) {
+        return ‘Загрузка…’
+      }
+      return isOnline ? ‘В сети’ : ‘Не в сети’
+    }<span class="menu__komment">
+    Чтобы React выполнял эффект только в случае изменения нужен второй аргумент в виде массива,
+    с которым будет сравниваться значение первого аргумента.
+    При каждом рендере react сравнивает новое значение переменной в первом аргументе со старым значением переменной,
+    указанным во втором аргументе (в массиве).</span>
+    useEffect(() => {
+      function handleStatusChange(status) {
+        setIsOnline(status.isOnline)
+      }
+      ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange)
+      return() => {
+        ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange)
+      }
+    }<span class="menu__komment"> - стрелочная функция это первый аргумент эффекта</span>
+    [props.friend.id])<span class="menu__komment"> - это второй аргумент эффекта со старым значением переменной,
+    по которому будет сравнение первого аргумента: повторно подписаться только если props.friend.id изменился.</span>
+
+    <em>Обычный эффект без сброса</em>:
+    import React, {useState, useEffect} from 'react'
+    function Example() {
+      const [count, setCount] = useState(0)
+      useEffect(() => {
+        document.title = `Вы нажали ${count} раз`
+      }, [count])<span class="menu__komment"> - перезапускать эффект только если count поменялся</span>
+      return (
+        < div >
+          < p >Вы нажали {count} раз< /p >
+          <.button onClick={() => setCount(count + 1)} > Нажми на меня < /button >
+        < /div >
+      )
+    }<span class="menu__komment">
+    Для корректной работы с хуками нужно установить плагин для ESLint:</span>
+    npm i eslint-plugin-react-hooks --save -dev
+
+    useContext:
+    import React, {useContext} from 'react'
+    const themes = {
+      light: {
+        foreground: “#000000”,
+        background: “#eeeeee”
+      }
+      dark: {
+        foreground: “#ffffff”,
+        background: “#222222”
+      }
+    }
+    <span class="menu__komment"> - создаём объект контекста со свойством light</span>
+    const ThemeContext = React.createContext(themes.light)
+    function App() {
+      return(
+        < Theme	Context.Provider value={themes.dark} ><span class="menu__komment"> - значение value определяет текущее значение</span>
+        < Toolbar /><span class="menu__komment"> передаваемого в Toolbar контекста. При обновлении значения - новый рендер.</span>
+        < /ThemeContext.Provider ><span class="menu__komment">Меняем контекст на тёмную тему.</span>				
+      )								
+    }
+    function Toolbar (props) {<span class="menu__komment"> - передаём контекст потомку</span>
+      return(
+        < div >
+          < ThemedButton />
+        < /div >
+      )
+    }
+    function ThemedButton() {
+      const theme = useContext(ThemeContext)<span class="menu__komment"> - используем контекст с тёмной темой</span>
+      return (
+        <.button style={{background: theme.background, color: theme.foreground}} > Я стилизован темой из контекста! < /button >
+      )
+    }
+
+    <em>Управляемый компонент</em>:<span class="menu__komment">
+    Если форму обрбатывать с помощью JS-функции, у которой есть доступ к введённым данным,
+    то такая форма называется “управляемым компонентом”.
+    Библиотека Formik.
+    Или, другими словами, <em>управляемый компонент</em> - это элемент формы рендер,
+    поведение при пользовательском вводе и значение которого контролирует React.</span>
+    class NameForm extends React.Component{
+      constructor(props){
+        super(props)
+        this.state={value:' '}
+        this.handleChange=this.handleChange.bind(this)
+        this.handleSubmit=this.handleSubmit.bind(this)
+      }
+      handleChange(event) {
+        this.setState({value: event.target.value})
+      }
+      handleSubmit(event){
+        alert('Отправленное имя: ' + this.state.value)
+        event.preventDefault()<span class="menu__komment"> - отменяем действе по умолчанию</span>
+      }
+      render() {
+        return (
+          < form onSubmit={this.handleSubmit} >
+            < label >
+              Имя:
+              < input type=”text” value={this.state.value} onChange={this.handleChange} />
+            < /label >
+            < input type=”Submit” value=”Отправить” />
+          < /form >
+        )
+      }
+    }<span class="menu__komment">
+    в атрибуте value всегда будет отражаться React состояние</span> this.state.value<span class="menu__komment">,
+    а каждое нажатие клавиш через handleChange будет это состояние изменять и React будет обновлять поле ввода по мере печатанья.</span>
+    < textarea > также как < input />
+    < textarea value={this.state.value} onChange={this.handleChange}><span class="menu__komment">
+    Чтобы использовать несколько тегов input нужно каждому дать свой атрибут name.</span>
+    < select >
+      < option value=”grapefruit”>Грейпфрут< /option>
+      < option value=”lime”>Лайм< /option>
+      < option selected value=”coconut”>Кокос< /option>
+      < option value=”mango”>Манго< /option>
+    < /select><span class="menu__komment">
+    если в value передать массив, то можно выбрать несколько опций:</span>
+    < select multiple={true} value={[‘Б’, ‘В’]} ><span class="menu__komment">
+    в React выбранный элемент присваивается в конструкторе по умолчанию:</span> this.state={value='cocnut'}<span class="menu__komment">,
+    а потом изменяется через setState:</span> < select value={this.state.value} onChange={this.handleChange} > < /select ><span class="menu__komment">
+    Если установить значение value, то пользователь изменить его не сможет:</span>
+    ReactDOM.render(< input value=”Привет” />)<span class="menu__komment">
+    Для любых изменяемых данных в React -приложении должен быть один “источник истины” (state).
+    Обычно состояние сначала добавляется к компоненту, которому оно требуется для рендера.
+    Затем, если другие компоненты также нуждаются в нём, вы можете поднять его до ближайшего общего предка.
+    Вместо того, чтобы пытаться синхронизировать состояние между различными компонентами,
+    вы должны полагаться на однонаправленный поток данных
+     - это водопад пропсов от родителя к потомку,
+    в который каждый компонент добавляет свой state в виде пропса (props).</span>
+
+    <em>Композиция</em>:<span class="menu__komment">
+    Вместо наследования:</span>
+    function FancyBorder(props) {
+      return (
+        <span class="menu__komment"> - поместить в div всё, что выделено тэгом < FancyBorder ></span>
+        < div className={'FancyBorder FancyBorder-' + props.color}> {props.children} < /div >
+      )
+    }
+    function Dialog(props) {
+      return (
+        <span class="menu__komment"> - определяю тэг < FancyBorder > и его содержимое для подстановки</span>
+        < FancyBorder color="blue" >
+          < h1 className="Dialog-title" > {props.title} < /h1 >
+          < p className="Dialog-message" > {props.message} < /p >
+        < /FancyBorder >
+      )
+    }
+    function WelcomDialog() {
+      return (
+        <span class="menu__komment"> - определяю компонент для рендера и задаю значение пропсов</span>
+        < Dialog
+          title="Welcom"
+          message="Thank you for visiting our spacecraft!"
+        />
+      )
+    }
+    ReactDOM.render(
+      < WelcomDialog />,
+      document.getElementById('root')
+    )
+
+    <em>Ключи</em>:<span class="menu__komment">
+    Ключи помогают React определить, какие элементы были изменены, добавлены или удалены.</span>
+    const todoItems = todos.map((todo) => 
+      < li key={todo.id} >
+        {todo.text}
+      < /li>
+    )
+    function NumberList(props) {
+      const numbers = props.numbers
+      const listItems = numbers.map((number) =><span class="menu__komment"> - функция map() преобразует массив numbers в список</span>
+        < ListItem
+          key={number.toString()}<span class="menu__komment"> - ключ нужно определить внутри массива, ключ это строка</span>
+          value={number}
+        />
+      )
+      return (
+        < ul >
+          {listItems}
+        < /ul >
+      )
+    }<span class="menu__komment">
+    или так:</span>
+    function NumberList(props) {
+      const numbers = props.numbers
+      return (
+        < ul >
+          {numbers.map((number) => 
+            < ListItem
+              key={number.toString()}
+              value={number}
+            />
+          )}
+        < /ul >
+      )
+    }
+
+    <em>Валидирование типов</em>:<span class="menu__komment">
+    Библиотека prop-types нужна для задания типов переменных:</span> npm i prop-types.
+
+    import PropTypes from 'prop-types'
+
+    function Example ({prop1, prop2, prop3}) {...}
+    Example.propTypes={
+      prop1: PropTypes.object.isRequired,
+      prop2: PropTypes.number,
+      prop3: PropTypes.func.isRequired,
+    }
+    export default Example
+
+    <em>Условный рендеринг</em>:
+    if (isLoggedIn) {
+      return < UserGreeting />;
+    }
+    return < GuestGreeting />;
+
+    {unreadMessages.length > 0 && < h2 > у вас {unreadMessages.length} непрочитанных сообщений. < /h2 >}
+    Пользователь < b >{isLoggedIn ? 'сейчас' : 'не'}< /b > на сайте.
+  </small>
+<img src="../img/react/react.png" alt="">
+<img src="../img/react/react0.png" alt="">
+<img src="../img/react/React1.png" alt="">
+<img src="../img/react/React2.png" alt="">
+<img src="../img/react/React3.png" alt="">
+<img src="../img/react/React4.png" alt="">
+<img src="../img/react/React5.png" alt="">
+<img src="../img/react/React6.png" alt="">
+<img src="../img/react/React7.png" alt="">
+<img src="../img/react/React8.png" alt="">
+<img src="../img/react/React9.png" alt="">
+<img src="../img/react/React10.png" alt="">
+<img src="../img/react/React11.png" alt="">
+<img src="../img/react/React12.png" alt="">
+<img src="../img/react/React13.png" alt="">
+<img src="../img/react/React14.png" alt="">
+<img src="../img/react/React15.png" alt="">
+<img src="../img/react/React16.png" alt="">
+<img src="../img/react/React17.png" alt="">
+<img src="../img/react/React18.png" alt="">
+<img src="../img/react/React19.png" alt="">
+<img src="../img/react/React20.png" alt="">
+<img src="../img/react/React21.png" alt="">
+<img src="../img/react/React22.png" alt="">
+<img src="../img/react/React23.png" alt="">
+<img src="../img/react/React24.png" alt="">
+<img src="../img/react/React25.png" alt="">
+<img src="../img/react/React26.png" alt="">
+<img src="../img/react/React27.png" alt="">
+<img src="../img/react/React28.png" alt="">
+<img src="../img/react/React29.png" alt="">
+<img src="../img/react/React30.png" alt="">
+<img src="../img/react/React31.png" alt="">
+<img src="../img/react/React32.png" alt="">
+<img src="../img/react/React33.png" alt="">
+<img src="../img/react/React34.png" alt="">
 
   <details><!--Redux-->
-    <summary>Redux</summary>
-    <img src="./img/React/redux.jpg" alt="">
-<!--<pre>
-Весь базовый функционал redux умещается в малюсенький файлик
-
+    <summary>Redux</summary><small><span class="menu__komment">
+Весь базовый функционал redux умещается в малюсенький файлик</span>
 function createStore(reducer, initialState) {
-let state = initialState
-return {
-dispatch: action => { state = reducer(state, action) },
-getState: () => state,
-}
+  let state = initialState
+  return {
+    dispatch: action => { state = reducer(state, action) },
+    getState: () => state
+  }
 }
 
-createStore возвращает объект с полем “dispatch”.
-dispatch - это функция, которая всего лишь применяет редюсер к нашему текущему состоянию
+<em>createStore</em><span class="menu__komment"> - возвращает объект с полем “dispatch”.</span>
+<em>dispatch</em><span class="menu__komment"> - это функция, которая всего лишь применяет редюсер к нашему текущему состоянию</span>
 (newState = reducer(state, action)).
-
+<span class="menu__komment">
 С этими 7 строками уже можно писать TodoApp.
-
-Инициализация хранилища:
+Инициализация хранилища:</span>
 function todosReducer(state, action) {
-switch (action.type) {
-case ‘ADD_TODO’:
-return [
-...state,
-{
-id: action.id,
-text: action.text,
-completed: false
-}
-]
-case ‘TOGGLE_TODO’:
-return state.map(todo => {
-if (todo.id === action.id) {
-return { ...todo, completed: !todo.completed }
-}
-return todo
-})
-default:
-return state
-}
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          completed: false
+        }
+      ]
+    case 'TOGGLE_TODO':
+      return state.map(todo => {
+        if (todo.id === action.id) {
+          return { ...todo, completed: !todo.completed }
+        }
+        return todo
+      })
+      default: return state
+  }
 }
 
 const initialTodos = []
 
 const store = createStore(todoReducer, initialTodos)
-
-Использование:
+<span class="menu__komment">
+Использование:</span>
 store.dispatch({
-type: ‘ADD_TODO’,
-id: 1,
-text: ‘Понять на сколько redux прост’
+  type: 'ADD_TODO',
+  id: 1,
+  text: 'Понять на сколько redux прост'
 })
 
-store.getState()       - [{ id: 1, text: ‘Понять насколько redux прост’, completed: false }]
+store.getState()<span class="menu__komment"> - [{ id: 1, text: ‘Понять насколько redux прост’, completed: false }]</span>
 store.dispatch({
-type: ‘TOGGLE_TODO’,
-id: 1
+  type: 'TOGGLE_TODO',
+  id: 1
 })
 
-store.getState()      - [{ id: 1, text: ‘Понять насколько redux прост’, completed: true }]
-Метод combineReducers позволяет вместо того, чтобы создавать один огромный reducer для всего состояния приложения сразу, разбивать его на отдельные модули.
+store.getState()<span class="menu__komment"> - [{ id: 1, text: ‘Понять насколько redux прост’, completed: true }]
+Метод combineReducers позволяет вместо того, чтобы создавать один огромный reducer для всего состояния приложения сразу,
+разбивать его на отдельные модули.</span>
 
 function counterReducer(state, action) {
-if (action.type === ‘ADD’) {
-return state + 1
-} else {
-return state
-}
+  if (action.type === 'ADD') {
+    return state + 1
+  } else {
+    return state
+  }
 }
 
 const reducer = combineReducers({
-todoState: todoReducer, 
-counterState: counterReducer
+  todoState: todoReducer, 
+  counterState: counterReducer
 })
 
 const initialState = {
-todoState: [],
-counterState: 0,
+  todoState: [],
+  counterState: 0,
 }
 
 const store = createStore(reducer, initialState)
-
-Усли упростить, то:
+<span class="menu__komment">
+Усли упростить, то:</span>
 function reducer(state, action) {
-return {
-todoState: todoReducer(state, action),
-counterState: counterReducer(state, action),
+  return {
+    todoState: todoReducer(state, action),
+    counterState: counterReducer(state, action),
+  }
 }
-}
+<span class="menu__komment">
+Но этот код плохо масштабируется.
+Если у нас 2 “под-состояния”, нам нужно дважды написать</span> (state, action)<span class="menu__komment">,
+а хорошие программисты так не делают.
 
-Но этот код плохо масштабируется. Если у нас 2 “под-состояния”, нам нужно дважды написать (state, action), а хорошие программисты так не делают.
-
-Если редюсоров и стэйтов много, то через обработку коллекции редюсеров:
+Если редюсоров и стэйтов много, то через обработку коллекции редюсеров:</span>
 function combineReducers(reducersMap) {
-return function combinationReducer(state, action) {
-const nextState = {}
-Object.entries(reducersMap).forEach(([key, reducer]) => {
-nextState[key] =  reducer(state[key], action)
-})
-return nextState
-}
+  return function combinationReducer(state, action) {
+    const nextState = {}
+    Object.entries(reducersMap).forEach(([key, reducer]) => {
+      nextState[key] =  reducer(state[key], action)
+    })
+    return nextState
+  }
 }
 
-middleware в разрезе redux - это какая-то штука, которая слушает все dispatch и при определенных условиях делает что-то.
+<em>middleware в разрезе redux</em><span class="menu__komment"> - это какая-то штука, 
+которая слушает все dispatch и при определенных условиях делает что-то.</span>
 const createStoreWithMiddleware = applyMiddleware(someMiddleware)(createStore)
 const store = createStoreWithMiddleware(reducer, initialState)
-applyMiddleware переопределяет метод dispatch, добавляя перед (или после) обновлением состояния какую-то пользовательскую логику.
-самый популярный middleware от создателей redux - redux-thunk, чаще всего используют при асинхронных операциях.
-Его смысл сводится к тому, что можно передавать в store.dispatch сложные функции
+<em>applyMiddleware</em><span class="menu__komment"> переопределяет метод dispatch,
+добавляя перед (или после) обновлением состояния какую-то пользовательскую логику.
+самый популярный middleware от создателей redux - <em>redux-thunk</em>, чаще всего используют при асинхронных операциях.
+Его смысл сводится к тому, что можно передавать в store.dispatch сложные функции</span>
 const thunk = store => dispatch => action => {
-if (typeof action === ‘function’) {
-return action(store.dispatch, store.getState)
-}
-return dispatch(action)
-}
+  if (typeof action === 'function') {
+    return action(store.dispatch, store.getState)
+  }
+  return dispatch(action)
+}<span class="menu__komment">
 метод createStore принимал атрибуты (reducer, initialState) и возвращал объект с ключами { dispatch, getSate }.
-метод applyMiddleware берёт уже реализованный метод createStore и переопределяет его возвращаемое значение:
+метод applyMiddleware берёт уже реализованный метод createStore и переопределяет его возвращаемое значение:</span>
 
 function applyMiddleware(middleware) {
-return function createStoreWithMiddleware(createStore) {
-return (reducer, state) => {
-const store = createStore(reducer, state)
-return {
-dispatch: action => middleware(store)(store.dispatch)(action),
-getState: store.getState,
-}
-}
-}
+  return function createStoreWithMiddleware(createStore) {
+    return (reducer, state) => {
+      const store = createStore(reducer, state)
+      return {
+        dispatch: action => middleware(store)(store.dispatch)(action),
+        getState: store.getState,
+      }
+    }
+  }
 }
 
-form:
-import { useDispatch } from ‘react-redux’
-import { createPost } from ‘actions/posts’
+<em>form</em>:
+import { useDispatch } from 'react-redux'
+import { createPost } from 'actions/posts'
 
-const [postData, setPostData] = useState({ creator: ‘ ’, title: ‘ ‘, message: ‘ ‘ })
+const [postData, setPostData] = useState({ creator: ' ', title: ' ', message: ' '})
 const dispatch = useDispatch()
 
 const handleSubmit = (e) => {
-e.preventDefault()
-dispatch(createPost(postData))
+  e.preventDefault()
+  dispatch(createPost(postData))
 }
 
-action:
+<em>action</em>:
 export const createPost = (post) => async (dispatch) => {
 try {
-const { data } = await api.createPost(post)
-dispatch ({ type: ‘CREATE’, payload: data })
-} catch (error) {
-console.log(error)
-}
+  const { data } = await api.createPost(post)
+  dispatch ({ type: 'CREATE', payload: data })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-api:
+<em>api</em>:
 export const createPost = (newPost) => axios.post(url, newPost)
 
-server/controllers:
+<em>server/controllers</em>:
 export const createPost = async (req, res) => {
-const post = req.body;
-const newPostMessage = new PostMessage({   …post, creator: req.userId, createdAt: new Date().toISOString() })
+  const post = req.body;
+  const newPostMessage = new PostMessage({   …post, creator: req.userId, createdAt: new Date().toISOString() })
 
-try {
-await newPostMessage.save();
-
-res.status(201).json(newPostMessage);
-} catch (error) {
-res.status(409).json({ message: error.message });
+  try {
+    await newPostMessage.save();
+    res.status(201).json(newPostMessage);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
 }
-}
 
-server/models:
-import mongoose from ‘mongoose’
+<em>server/models</em>:
+import mongoose from 'mongoose'
 
 const postSchema = mongoose.Schema({
-title: String,
-message: String,
-name: String,
-creator: String,
-tags: [String],
-selectedFile: String,
-likes: { type: [String], default: [] },
-createdAt: {
-type: Date,
-default: new Date(),
-},
+  title: String,
+  message: String,
+  name: String,
+  creator: String,
+  tags: [String],
+  selectedFile: String,
+  likes: { type: [String], default: [] },
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  },
 })
 
-export default mongoose.model(‘PostMessage’, postSchema);
+export default mongoose.model('PostMessage', postSchema);
 
-reducers:
+<em>reducers</em>:
 export default (post = [ ], action) => {
-switch (action.type) {
-case ‘FATCH_ALL’:
-return action.payload;
-case  ‘CREATE’:
-return [ …posts, action.payload ];
-default:
-return posts;
-}
-}
-</pre>-->
+  switch (action.type) {
+    case 'FATCH_ALL':
+      return action.payload;
+    case 'CREATE':
+      return [ …posts, action.payload ];
+    default: return posts;
+  }
+}</small>
+  <img src="../img/react/redux.jpg" alt="">
   </details>
 </details>
 </pre>

@@ -39,6 +39,10 @@ img {
   width: 100%;
 }
 
+summary {
+  cursor: pointer;
+}
+
 
 /*Menu*/
 
@@ -119,7 +123,7 @@ tr:nth-child(even) {
   color: rgb(63, 192, 40);
 }
 
-.menu__inner i {
+.menu__inner i, a {
   color: white;
 }
 
