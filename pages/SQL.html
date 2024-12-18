@@ -71,9 +71,11 @@
         field_3 <em>INT</em>
       );
 
-      <span class="menu__komment">PRIMARY KEY - уникальный идентификатор записей.
-      FOREIGN KEY - внешний ключ, значения идентификатора записей в связанной таблице.
-      SERIAL - автоинкремент идентификатора в PostgreSQL</span>
+      <span class="menu__komment"><em>PRIMARY KEY</em> - уникальный идентификатор записей.
+      <em>FOREIGN KEY</em> - внешний ключ, значения идентификатора записей в связанной таблице.
+      <em>SERIAL</em> - автоинкремент идентификатора в PostgreSQL
+      <em>AUTO_INCREMENT</em> - автоинкремент идентификатора в MySQL</span>
+
       <em>CREATE</em> <em>TABLE</em> table(
         id <em>SERIAL</em> <em>PRIMARY KEY</em>,
         field_1 <em>VARCHAR</em>(100),

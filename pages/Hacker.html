@@ -1677,6 +1677,244 @@ sudo mv ~/wg0-client-losst.conf /etc/wireguard/wg0.conf
 wg-quick up wg0
 sudo wg show
 
+четыре основные характеристики сети:
+- отказоустойчивость,
+- масштабируемость,
+- качество обслуживания (QoS),
+- безопасность.
+
+Отказоустойчивость достигаеться вариантами машрутов.
+Наличие нескольких путей к пункту назначения
+известно как избыточность или резервирование (redundancy).
+
+Масштабируемость позволяет добавлять новых пользователей.
+
+Согласно политике QoS маршрутизатор может управлять потоками данных и голоса,
+предпочитая голосовое соединение при возникновении перегрузки в сети.
+Целью QoS является установка приоритетов для чувствительного к времени трафика.
+Важен тип трафика, а не его содержание.
+
+Администраторы сети также должны защищать информацию, передаваемую в пакетах по сети,
+а также хранящуюся на подключенных к сети устройствах.
+Достичь целей безопасности сети можно при соблюдении трех основных требований.
+
+Конфиденциальность – конфиденциальность данных означает,
+что только уполномоченные и авторизованные пользователи могут получать доступ к данным.
+
+Целостность - целостность данных гарантирует пользователям,
+что информация не была изменена во время передачи от источника к получателю.
+
+Доступность - доступность данных гарантирует авторизованным пользователям
+своевременный и надежный доступ к сервисам данных.
+
+Управление IP-трафиком основано на характеристиках и устройствах,
+связанных с каждым из трех уровней иерархической модели проектирования сети: доступа,
+распределения и ядра.
+
+Администраторы сети должны решать два типа безопасности:
+безопасность сетевой инфраструктуры и защиту информации.
+
+Администраторы сети также должны защищать информацию, 
+передаваемую в пакетах по сети, а также хранящуюся на подключенных к сети устройствах.
+Есть три основных требования для достижения целей безопасности сети:
+конфиденциальность, целостность и доступность.
+
+Облачные услуги включают:
+SaaS – Программное обеспечение как услуга
+PaaS – Платформа как услуга
+IaaS - Инфраструктура как услуга
+
+Существует четыре основные облачные модели:
+Публичные облака - облачные приложения и услуги, предлагаемые в общедоступном облаке,
+доступны для широкой общественности.
+
+Частные облака – облачные приложения и сервисы, предлагаемые в частном облаке,
+предназначенные для определенной организации или, например, правительства.
+
+Гибридные облака – состоят из двух или более разных типов облаков,
+где каждая часть остается отдельным объектом, но обе связаны с помощью одной архитектуры.
+Облака сообщества - облака, созданные для эксклюзивного использования определенными сообществами.
+
+Виртуализация - это основа для облачных вычислений.
+Без виртуализации облачные вычисления в том виде, в каком они наиболее широко внедряются,
+были бы невозможны.
+
+Гипервизор — это программа, микропрограмма или аппаратное обеспечение,
+добавляющее уровень абстракции поверх физического оборудования.
+
+Гипервизоры типа 1 выполняются на голом железе,
+поскольку гипервизор устанавливается непосредственно на аппаратное обеспечение.
+Такие гипервизоры обычно используются на корпоративных серверах
+и сетевых устройствах центров обработки данных.
+
+Гипервизор типа 2 — это программное обеспечение,
+создающее и запускающее экземпляры виртуальной машины.
+Компьютер, на котором гипервизор поддерживает одну или несколько виртуальных машин,
+является узловой машиной – хостом.
+
+Максимальная единица передачи данных Ethernet (maximum transmission unit, MTU)
+На интерфейсе Ethernet по умолчанию MTU составляет 1500 байт.
+После извлечения 20 байт заголовка IPv4 и TCP-заголовка длиной 20 байт,
+размер MSS по умолчанию составит 1460 байт.
+MSS = Maximum Segment Size (максимальный размер сегмента транспортного уровня).
+
+Перед настройкой коммутатора ознакомьтесь со следующими задачами начальной конфигурации коммутатора:
+
+Настройте имя устройства.
+
+hostname name
+Защитите доступ к пользовательскому режиму EXEC.
+
+line con 0
+password password
+login
+Защитите удаленный доступ к Telnet/SSH.
+
+line vty 0 15
+password password
+login
+Защитите доступ к привилегированному режиму EXEC.
+
+enable secret password
+Защитите все пароли в файле конфигурации.
+
+service password-encryption
+Установите баннер с ограничением доступа.
+
+banner motd delimiter message delimiter
+Настройте управление SVI.
+
+interface vlan 1
+ip address ip-address subnet-mask
+не shutdown
+Сохраните настройки.
+
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname S1
+S1(config)# enable secret class
+S1(config)# line console 0
+S1(config-line)# password cisco
+S1(config-line)# login
+S1(config-line)# line vty 0 15
+S1(config-line)# password cisco
+S1(config-line)# login
+S1(config-line)# exit
+S1(config)# service password-encryption
+S1(config)# banner motd #No unauthorized access allowed!#
+S1(config)# interface vlan1
+S1(config-if)# ip address 192.168.1.20 255.255.255.0
+S1(config-if)# no shutdown
+S1(config-if)# end
+S1# copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+[OK]
+S1#
+
+Sw-Floor-1# configure terminal
+Sw-Floor-1(config)# interface vlan 1
+Sw-Floor-1(config-if)# ip address 192.168.1.20 255.255.255.0
+Sw-Floor-1(config-if)# no shutdown
+Sw-Floor-1(config-if)# exit
+Sw-Floor-1(config)# ip default-gateway 192.168.1.1
+
+Основные этапы настройки маршрутизатора
+Шаг 1. Настройка имени устройства.
+Router(config)# hostname hostname
+
+Шаг 2. Защита доступа к привилегированному режиму EXEC.
+Router(config)# enable secret password
+
+Шаг 3. Защита доступа к пользовательскому режиму EXEC.
+Router(config)# line console 0
+Router(config-line)# password password
+Router(config-line)# login
+
+Шаг 4. Защита удаленного доступа к Telnet/SSH.
+Router(config-line)# line vty 0 4
+Router(config-line)# password password
+Router(config-line)# login
+Router(config-line)# transport input {ssh | telnet | none | all}
+
+Шаг 5. Защитите все пароли в конфигурационном файле.
+Router(config-line)# exit
+Router(config)# service password-encryption
+
+Шаг 6. Настройка предупреждения по ограниченному доступу.
+Router(config)# banner motd delimiter message delimiter
+
+Шаг 7. Сохраните настройки.
+Router(config)# copy running-config startup-config
+
+Router> enable
+Router# configure terminal
+Enter configuration commands, one per line.
+End with CNTL/Z.
+Router(config)# hostname R1
+R1(config)#
+R1(config)# enable secret class
+R1(config)#
+R1(config)# line console 0
+R1(config-line)# password cisco
+R1(config-line)# login
+R1(config-line)# exit
+R1(config)#
+R1(config)# line vty 0 4
+R1(config-line)# password cisco
+R1(config-line)# login
+R1(config-line)# transport input ssh
+R1(config-line)# exit
+R1(config)#
+R1(config)# service password-encryption
+R1(config)#
+R1(config)# banner motd #
+Enter TEXT message. End with the character '#'.
+***********************************************
+WARNING: Unauthorized access is prohibited!
+***********************************************
+R1(config)#
+
+Следующая команда сохраняет конфигурацию в NVRAM:
+R1# copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+[OK]
+R1#
+
+По умолчанию SSH поддерживает обе версии (1 и 2).
+Если обе версии поддерживаются,
+результат команды show ip ssh сообщает о поддержке версии 1.99.
+В версии 1 есть ряд известных уязвимостей.
+Поэтому рекомендуется включать только версию 2.
+Включите эту версию SSH, используя команду режима глобальной конфигурации ip ssh version 2.
+S1# show ip ssh
+SSH Disabled - version 1.99
+%Please create RSA keys (of at least 768 bits size) to enable SSH v2.
+Authentication timeout: 120 secs; Authentication retries: 3
+S1# configure terminal
+S1(config)# ip domain-name cisco.com
+S1(config)# crypto key generate rsa
+The name for the keys will be: S1.cisco.com
+...
+How many bits in the modulus [512]: 1024
+...
+S1(config)# username admin secret ccna
+S1(config-line)# line vty 0 15
+S1(config-line)# transport input ssh
+S1(config-line)# login local
+S1(config-line)# exit
+S1(config)# ip ssh version 2
+S1(config)# exit
+S1#
+
+Шаг 1. Проверьте поддержку SSH – show ip ssh
+Шаг 2. Установите IP-домен – ip domain-name domain-name
+Шаг 3. Сгенерируйте пары ключей RSA – crypto key generate rsa
+Шаг 4. Настройте аутентификацию пользователя – имя пользователя username пароль secret
+Шаг 5. Настройте vty линии – line vty
+Шаг 6. Включите SSH версии 2 – ip ssh version 2
+
 
   </div>
 </body>
