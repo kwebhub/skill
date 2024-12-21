@@ -6,27 +6,287 @@
   <title>Development</title>
 </head>
 <body>
-  # HTML
-[W3schools](https://www.w3schools.com/html/default.asp)
-Cтруктура файла html
-````html
-<!DOCTYPE html>
-<html lang="ru">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Это классный сайт.">
-      <title>Название страницы</title>
-      <link rel="stylesheet" href="./css/style.css">
-      <link rel="icon" href="favicon.ico" type="image/x-icon">
-   </head>
-   <body>
 
-      <script src="./js/script.js"></script>
-   </body>
-</html>
-````
+  <p class="menu__item_prelude">
+    <em>HTML, XML - языки:</em> <br>
+      HTML - закрепленные теги, прощает некоторые синтаксические ошибки. <br>
+      XML - теги создает пользователь, проверка синтаксиса и валидация документа по WDSL. <br>
+      <br>
+    <em>RPC, REST - архитектура API:</em> <br>
+      RPC - запрос на выполнение функции на сервере по имени функции с входными параметрами. <br>
+      REST - запрос с помощью установленных методов к ресурсу (сущности) на сервере. <br>
+      <br>
+    <em>XML, JSON - формат передачи данных:</em> <br>
+      XML - наличие тегов, корневого элемента и пространства имен. Не может содержать массивы. <br>
+      JSON - более компактный, не имеет тегов, может содержать в значениях массивы. <br>
+      <br>
+    <em>HTTP, SOAP - протоколы передачи данных:</em> <br>
+      HTTP - протокол прикладного уровня передачи данных. <br>
+      SOAP - формальный корпоративный подход, работает поверх любого протокола связи, даже асинхронно. <br>
+      <br>
+    <em>Наиболее распространенные связки:</em> <br>
+      JSON + REST + HTTP <br>
+      XML + RPC + SOAP <br>
+  </p>
+
+  <p>
+    <dfn>Интерфейс программирования приложений</dfn> (<i>API</i>)
+    - это интерфейс или протокол связи между
+    клиентом и сервером, предназначенный для
+    упрощения создания программного обеспечения
+    на стороне клиента. <br>
+    API является важной абстракцией, описывающей
+    функциональность «в чистом виде»,
+    безотносительно того, как реализована эта
+    функциональность.
+</p>
+<p>
+    <dfn>RPC</dfn> (<i>Remote Procedure Call</i>) <br>
+    Удаленный вызов процедур — класс технологий, позволяющих
+    компьютерным программам вызывать функции или процедуры
+    в другом адресном пространстве (как правило, на удалённых
+    компьютерах). <br>
+    <img src="./img/rpc.png" alt=""><br>
+    <img src="./img/rpc1.png" alt="">
+</p>
+<p>
+    <dfn>REST</dfn> (<i>Representational State Transfer</i>) <br>
+    Передача состояния представления — архитектурный стиль
+    взаимодействия компонентов распределённого приложения в
+    сети. <br>REST представляет собой согласованный набор ограничений,
+    учитываемых при проектировании распределённой системы по
+    модели клиент-сервер.
+    <ul>Особенности архитектурного стиля:
+        <li>Каждая сущность должна иметь уникальный идентификатор – URI</li>
+        <li>Сущности должны быть связаны между собой</li>
+        <li>Для чтения и изменения данных должны использоваться стандартные методы</li>
+        <li>Должна быть поддержка нескольких типов ресурсов</li>
+        <li>Взаимодействие должно осуществляться без состояния</li>
+    </ul>
+    Каждая единица информации однозначно определяется URL –
+    это значит, что URL по сути является первичным ключом для
+    единицы данных. <br>Т.е. например третья книга с книжной полки
+    будет иметь вид /book/3, а 35 страница в этой книге —
+    /book/3/page/35.
+    <ul>CRUD в REST:
+        <li>GET /book/ — получить список всех книг</li>
+        <li>GET /book/3/ — получить книгу номер 3</li>
+        <li>POST /book/ — добавить книгу (данные в теле запроса)</li>
+        <li>PUT /book/3 – изменить книгу (данные в теле запроса)</li>
+        <li>DELETE /book/3 – удалить книгу</li>
+    </ul>
+    <ul>Или:
+        <li>GET /book/ — получить список всех книг</li>
+        <li>GET /book/3/ — получить книгу номер 3</li>
+        <li>POST /book/ — добавить книгу (данные в теле запроса)</li>
+        <li>POST /book/3 — изменить книгу (данные в теле запроса)</li>
+        <li>POST /book/3 — удалить книгу (тело запроса пустое)</li>
+    </ul>
+</p>
+<img src="./img/MicroService.png" alt="">
+<p>
+    RPC: Мы отправляем сообщение, и это может привести к тому,
+    что что-то сохранится в базе данных для сохранения истории, что
+    может быть другим вызовом RPC, возможно, с теми же именами
+    полей. <br>
+    REST: Мы создаем ресурс сообщений в коллекции сообщений
+    пользователя. <br>Мы можем легко увидеть историю этого, выполнив
+    GET для того же URL. <br>
+    <img src="./img/rpcrest.png" alt=""><br>
+    <img src="./img/rpcrest1.png" alt=""><br>
+    API основанные на RPC прекрасно работают для действий (выполнения процедур или команд). <br>
+    API основанные на REST хороши для моделирования сущностей и применения 
+    CRUD (create, read, update, delete) для данных.
+</p>
+<p>
+    <dfn>JSON</dfn> - простой формат обмена данными, удобный для чтения и написания
+    как человеком, так и компьютером. <br>
+    Он основан на подмножестве языка программирования JavaScript. <br>
+    Несмотря на происхождение от JavaScript, формат считается независимым
+    от языка и может использоваться практически с любым языком
+    программирования. <br>
+</p>
+<ul>Ключи в JSON находятся с левой стороны от двоеточия. <br>Их нужно
+    оборачивать в двойные кавычки (например, "key ") и это может быть любая
+    строка. <br>В каждом объекте, ключи должны быть уникальными. <br>
+    Пробелы допускаются, но лучше их заменять знаком подчеркивания. <br>
+    Значения находятся с правой стороны от двоеточия. <br>Значения могут быть
+    одним из шести типов данных:
+    <li>Строкой</li>
+    <li>Числом</li>
+    <li>Объектом</li>
+    <li>Массивом</li>
+    <li>Булевым значением</li>
+    <li>null</li>
+    <img src="./img/json1.png" alt=""><br>
+    <img src="./img/json2.png" alt=""><br>
+</ul>
+<p>
+    JSON более компактный и не требует тегов
+    закрытия как в XML. <br>Более того, XML не
+    может использовать массивы, как в
+    примере с JSON.
+</p>
+<p>
+    API (Application programming interface) - это контракт,
+который предоставляется программою “Ко мне можно обращаться так и так, я обязуюсь делать то и это”.
+
+API -  это набор функций. 
+Наборы группируются разработчиком по функционалу, по заказчику, по смыслу операций и т.д.
+</p>
+
+Markdown
+Heading:
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+Bold:
+**bold text**
+
+Italic:
+*italicized text*
+
+Strikethrough:
+~~The world is flat.~~
+
+Blockquote:
+> blockquote
+
+Ordered List:
+1. First item
+2. Second item
+3. Third item
+
+Unordered List:
+- First item
+- Second item
+- Third item
+
+Code:
+`code`
+
+Link:
+[title](https://www.example.com)
+
+Image:
+![alt text](image.jpg)
+
+Table:
+| Item         | Price | # In stock |
+|--------------|:-----:|-----------:|
+| Juicy Apples |  1.99 |        739 |
+| Bananas      |  1.89 |          6 |
+
+Fenced Code Block:
+	{
+	  "firstName": "John",
+	  "lastName": "Smith",
+	  "age": 25
+	}
+
+Footnote:
+Here's a sentence with a footnote. [^1]
+[^1]: This is the footnote. 
+
+Heading ID:
+My Great Heading {#custom-id}
+
+Definition List:
+term
+: definition
+
+Task List:
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media 
+
+Emoji:
+That is so funny! :joy:
+
+Highlight:
+I need to highlight these ==very important words==. 
+
+Subscript:
+H~2~O
+
+Superscript:
+X^2^
+
+<p>
+  <dfn>XML</dfn> - это язык разметки подобный HTML. <br>
+  Расшифровывается как (англ. <i>Extensible Markup Language</i> - Расширяемый Язык Разметки). <br>
+  В отличии от остальных языков разметки, XML сам по себе не определён (это означает, что вы должны сами определять используемые теги). <br>
+  Основной целью XML является передача данных между разными системами (даже концептуально разными), такими как интернет.
+</p>
+<p>
+  Cвое название получил по той причине, что в нем нет
+  фиксированного формата, как в HTML. <br>В то время как язык HTML
+  ограничивается набором твердо закрепленных тегов,
+  пользователи XML могут создавать свои собственные тэги,
+  которые бы отвечали тематике документа. <br>Таким образом, XML -
+  это метаязык. <br>Этот язык используется в качестве средства для
+  описания грамматики других языков и контроля за
+  правильностью составления документов.
+</p>
+<p>
+  Для корректного XML документа должны исполняться следующие условия: <br>
+  Правильное оформление документа. <br>
+  Соблюдаться все синтаксические правила XML. <br>
+  Документ должен соответствовать семантическим правилам языка (которые обычно заданны в схеме XML или DTD (англ. Document Type Definition (en-US))).
+</p>
+<ul>Сходство с HTML:
+  <li>В XML существуют открывающие, закрывающие и пустые тэги.</li>
+  <li>Теги в документе могут быть вложены друг в друга.</li>
+  <li>Теги начала и конца элемента являются основными используемыми в XML разметками.</li>
+  <li>Тэги могут иметь атрибуты, причем количество атрибутов зависит от фантазии автора.</li>
+  <li>Документы XML могут содержать ссылки на другие объекты.</li>
+</ul>
+<p>Основные отличия от HTML: <br>
+  Большое внимание уделяется контролю документа. <br>
+  Проверка действительности документа предполагает выполнение следующих действий: <br>
+  • Синтаксическая проверка, <br>
+  • Проверка валидности документа.
+</p>
+<p>XML обычно используют для описания чего-то. <br>
+  Существуют методы отображения XML данных, но если вы не определили способ визуализации XML документа, то в браузере он отобразится построчно, как обычный текстовый файл. <br>
+  Один из методов отображения XML - указать CSS (чтобы использовать в документе нужно прописать инструкцию xml-stylesheet). <br>
+  <code> xml-stylesheet type="text/css" href="stylesheet.css" </code><br>
+  <br>
+  Есть также много других мощных методов отображения XML, например, <dfn>XSLT</dfn>(англ. <i>Extensible Stylesheet Language Transformations</i>), 
+  который может использоваться для преобразование XML в другие языки такие, как HTML. <br>
+  Это делает XML очень универсальным. <br>
+  <code> xml-stylesheet type="text/xsl" href="transform.xsl" </code><br>
+</p>
+<img src="./img/XML_.png" alt=""> <br>
+<img src="./img/XMLDTD.png" alt=""> <br>
+<img src="./img/XMLEntities.png" alt="">
+
+
+HTML
+W3schools https://www.w3schools.com/html/default.asp
+
+Cтруктура файла html
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Это классный сайт.">
+<title>Название страницы</title>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<script src="./js/script.js"></script>
+</body>
+</html> -->
+
 <pre><code>
   // Пусть ваш код будет таким же аккуратным, как ваша комната
   &lt;div&gt;
@@ -34,9 +294,7 @@ Cтруктура файла html
   &lt;/div&gt;
 </code></pre>
 
-
-Теги:
-````html
+Теги html:
 <br>
 <hr>
 <p></p>
@@ -95,10 +353,9 @@ Cтруктура файла html
 	<input type="submit" id="" name="" value="Надпись на кнопке">
 	<button>Надпись на кнопке</button>
 </form>
-````
 
-Теги с семантикой:
-````html
+
+Теги html с семантикой:
 <header></header>              // верхняя часть сайта - шапка сайта
 <main></main>                  // главная часть сайта - основной контент
 <footer></footer>              // нижняя часть сайта - подвал сайта
@@ -122,160 +379,99 @@ Cтруктура файла html
 </figure>
 
 <picture>                      // варианты изображений
-  <source media="(min-width: 650px)" srcset="img_food.jpg">  
-  <source media="(min-width: 465px)" srcset="img_car.jpg">  
-  <img src="img_girl.jpg">  
+<source media="(min-width: 650px)"srcset="img_food.jpg">  
+<source media="(min-width: 465px)"srcset="img_car.jpg">  
+<img src="img_girl.jpg">  
 </picture>
-````
 
-# Pug
+
+Pug
 Pug - это препроцессор HTML и шаблонизатор, который был написан на JavaScript для Node.js.
 
-[Официальная документация по Pug](https://pugjs.org/language/attributes.html)
+Официальная документация по Pug https://pugjs.org/language/attributes.html
 
-### В терминале:
-```
+В терминале:
 pug -w . -o ./ -P -E php
-```
+
 pug - компилировать файлы с расширением .pug
--w - *watcher* - следить за изменениями в файлах
+-w - watcher - следить за изменениями в файлах
 . - текущий каталог (каталог слежения)
--o - *output* - вывод скомпилированных файлов
+-o - output - вывод скомпилированных файлов
 ./ - каталог вывода
--P - *pretty* - удобочитаемый вид
+-P - pretty - удобочитаемый вид
 -E php - компилировать с расширением php
 
-### <a name="Теги"></a> Теги
-В Pug нет закрывающих тегов, вместо этого он использует строгую табуляцию (или отступы) для определения вложености тегов.
+Теги
+В Pug нет закрывающих тегов, вместо этого он использует строгую табуляцию (отступы)
+для определения вложености тегов.
 Для закрытия тегов в конце необходимо добавить символ `/`: `foo(bar='baz')/`
 
-Pug
-````pug
-ul
-  li Item A
-  li Item B
-  li Item C
-````
-HTML
-````html
-<ul>
-  <li>Item A</li>
-  <li>Item B</li>
-  <li>Item C</li>
-</ul>
-````
+Pug           HTML
+ul            <ul>
+  li Item A     <li>Item A</li>
+  li Item B     <li>Item B</li>
+  li Item C     <li>Item C</li>
+              </ul>
 
-### <a name="Текст"></a> Текст
+Текст
 Непосредственно в Pug можно вставлять элементы в HTML синтаксисе
 
+Pug                                           HTML
+p This is plain old <em>text</em> content.    <p>This is plain old <em>text</em> content.</p>
+
 Pug
-````pug
-p This is plain old <em>text</em> content.
-````
-HTML
-```html
-<p>This is plain old <em>text</em> content.</p>
-````
-***
-Pug
-````pug
 p
   | The pipe always goes at the beginning of its own line,
   | not counting indentation.
-````
-HTML
-````html 
-<p>The pipe always goes at the beginning of its own line, not counting indentation.</p>
-````
 
-### Импорт и расширение файлов
-````pug
+HTML
+<p>The pipe always goes at the beginning of its own line, not counting indentation.</p>
+
+Импорт и расширение файлов
 include parts/header
 
 extends templates/layout
 block main
-  main.main
-    p New main
-````
+  main.main
+    p New main
 
-### <a name="Атрибуты"></a> Атрибуты
+Атрибуты
 В Pug можно встраивать JavaScript код, благодаря чему возможны конструкции показанные ниже.
 
-Pug
-````pug
-a(href='google.com') Google
-|
-|
-a(class='button' href='google.com') Google
-|
-|
-a(class='button', href='google.com') Google
-````
-HTML
-````html 
-<a href="google.com">Google</a>
-<a class="button" href="google.com">Google</a>
-<a class="button" href="google.com">Google</a>
-````
-***
-Pug
-````pug
+Pug                                             HTML
+a(href='google.com') Google                     <a href="google.com">Google</a>
+a(class='button' href='google.com') Google      <a class="button" href="google.com">Google</a>
+
+Pug                                             HTML
 - var authenticated = true
-body(class=authenticated ? 'authed' : 'anon')
-````
-HTML
-````html 
-<body class="authed"></body>
-````
-***
-Pug
-````pug
-input(
+body(class=authenticated ? 'authed' : 'anon')   <body class="authed"></body>
+
+Pug                   HTML
+input(                <input type="checkbox" name="agreement" checked>
   type='checkbox'
   name='agreement'
   checked
 )
-````
-HTML
-````html 
-<input type="checkbox" name="agreement" checked="checked" />
-````
-***
-Pug
-````pug
+
+Pug                             HTML
 - var url = 'pug-test.html';
-a(href='/' + url) Link
-|
-|
+a(href='/' + url) Link          <a href="/pug-test.html">Link</a>
+
 - url = 'https://example.com/'
-a(href=url) Another link
-````
-HTML
-````html 
-<a href="/pug-test.html">Link</a>
-<a href="https://example.com/">Another link</a>
-````
-***
-Pug
-````pug
+a(href=url) Another link        <a href="https://example.com/">Another link</a>
+
+Pug                                            HTML
 - var classes = ['foo', 'bar', 'baz']
-a(class=classes)
-|
-|
-//- the class attribute may also be repeated to merge arrays
-a.bang(class=classes class=['bing'])
-````
-HTML
-````html 
-<a class="foo bar baz"></a>
-<a class="bang foo bar baz bing"></a>
-````
+a(class=classes)                              <a class="foo bar baz"></a>
+//- the class attribute may also be
+repeated to merge arrays
+a.bang(class=classes class=['bing'])          <a class="foo bar baz bang bing"></a>
 
-### <a name="Констуркция-Switch-Case"></a> Конструкция Switch Case
-Pug поддерживает switch case, которая представляет собой более наглядный способ сравнить выражение сразу с несколькими вариантами.
+Конструкция Switch Case
+Pug поддерживает switch case, которая представляет собой более наглядный способ
+сравнить выражение сразу с несколькими вариантами.
 
-Pug
-````pug
+Pug                                       HTML
 - var friends = 10
 case friends
   when 0
@@ -283,260 +479,146 @@ case friends
   when 1
     p you have a friend
   default
-    p you have #{friends} friends
-````
-HTML
-````html 
-<p>you have 10 friends</p>
-````
+    p you have #{friends} friends         <p>you have 10 friends</p>
 
-### <a name="Циклы"></a> Циклы
-Pug
-````pug
-ul
-  each val, index in ['zero', 'one', 'two']
-    li= index + ': ' + val
-````
-HTML
-````html 
-<ul>
-  <li>0: zero</li>
-  <li>1: one</li>
-  <li>2: two</li>
-</ul>
-````
-***
-Pug
-````pug
+Циклы
+Pug                                           HTML
+ul                                            <ul>
+  each val, index in ['zero', 'one', 'two']       <li>0: zero</li>
+    li= index + ': ' + val                        <li>1: one</li>
+                                                  <li>2: two</li>
+                                                </ul>
+
+Pug                                           HTML
 - var values = [];
-ul
-  each val in values
-    li= val
+ul                                            <ul>
+  each val in values                              <li>There are no values</li>
+    li= val                                   </ul>
   else
     li There are no values
-````
-HTML
-````html 
-<ul>
-  <li>There are no values</li>
-</ul>
-````
-***
-Pug
-````pug
-- var n = 0;
-ul
-  while n < 4
-    li= n++
-````
-HTML
-````html 
-<ul>
-  <li>0</li>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-</ul>
-````
-### <a name="Вставка-JavaScript-кода"></a> Вставка JavaScript кода
-Pug поддерживает вставку частей JavaScript кода в шаблоны.
 
-Не буфферизированный код начинается с символа `-`  
-Pug
-````pug
-- for (var x = 0; x < 3; x++)
-  li item
-````
-HTML
-````html 
-<li>item</li>
-<li>item</li>
-<li>item</li>
-````
-***
+Pug                                           HTML
+- var n = 0;                                  <ul>
+ul                                                <li>1</li>
+  while n < 4                                     <li>2</li>
+    li= n++                                       <li>3</li>
+                                                </ul>
+
+Вставка JavaScript кода
+Pug поддерживает вставку
+частей JavaScript кода в шаблоны.
+Не буфферизированный код
+начинается с символа `-`  
+Pug                                           HTML
+- for (var x = 0; x < 3; x++)                 <ul>
+  li item                                         <li>item</li>
+                                                  <li>item</li>
+                                              </ul>                           
+
 Буфферизированный код начинается с символа `=`  
-Pug
-````pug
-p
+Pug                                           HTML
+p                                                 <p>This code is &lt;escaped&gt;!</p>
   = 'This code is <escaped>!'
-````
-HTML
-````html 
-<p>This code is &lt;escaped&gt;!</p>
-````
 
-```
 - let firstName = "Bob"
-
 p= firstName
-
 - let lastName = "Joe"
-
 .full-name= firstName + " " + lastName
-
 .full-name= `First name: ${firstName} Last name: ${lastName}`
 
-  
-
 - const names = ['Bob Joe', 'John Doe', 'Billy Bob', 'John Week']
-
 ol
-
-  each name in names
-
-    li= name
-
-  
+  each name in names
+    li= name
 
 -
-
-  const friendsList = [
-
-    {
-
-      "firstName":"Bob",
-
-      "lastName":"Joe",
-
-      "mobile":"123456789"
-
-    },
-
-    {
-
-    "firstName":"John",
-
-    "lastName":"Doe",
-
-    "mobile":"123456789"
-
-    },
-
-    {
-
-    "firstName":"Billy",
-
-    "lastName":"Bob",
-
-    "mobile":"123456789"
-
-    }
-
-  ]
-
-  
-
+  const friendsList = [
+    {
+      "firstName":"Bob",
+      "lastName":"Joe",
+      "mobile":"123456789"
+    },
+    {
+      "firstName":"John",
+      "lastName":"Doe",
+      "mobile":"123456789"
+    },
+    {
+      "firstName":"Billy",
+      "lastName":"Bob",
+      "mobile":"123456789"
+    }
+  ]
 #friendsList
-
-  each friend in friendsList
-
-    .friend
-
-      .first-name= friend.firstName
-
-      .last-name= friend.lastName
-
-      .mobile= friend.mobile
-
-  
+  each friend in friendsList
+    .friend
+      .first-name= friend.firstName
+      .last-name= friend.lastName
+      .mobile= friend.mobile
 
 -
-
-  const friendsList2 = []
-
-  
-
+  const friendsList2 = []
 #friendsList2
-
-  each friend in friendsList
-
-    .friend
-
-      .first-name #{friend.firstName}
-
-      .last-name #{friend.lastName}
-
-      .mobile #{friend.mobile}
-
-  else
-
-    .oh-no You have no friends!
-
-  
+  each friend in friendsList
+    .friend
+      .first-name #{friend.firstName}
+      .last-name #{friend.lastName}
+      .mobile #{friend.mobile}
+  else
+    .oh-no You have no friends!
 
 mixin friendCard(friend)
-
-  .friend
-
-    .first-name #{friend.firstName}
-
-    .last-name #{friend.lastName}
-
-    .mobile #{friend.mobile}
+  .friend
+    .first-name #{friend.firstName}
+    .last-name #{friend.lastName}
+    .mobile #{friend.mobile}
 
   
 
 #friends
+  each friend in friendsList
+    +friendCard(friend)
 
-  each friend in friendsList
-
-    +friendCard(friend)
-```
-
-### PHP
+PHP
 вывод данных полученных из формы, код вместе с html в php файле.
-```
 .friend.
-  <?php
-    echo $_POST['username'];
-    echo "br";
-    echo $_POST['username'];
-    echo "br";
-    echo $_POST['username'];
-  ?>
-```
-.friend. - точка вначале обозначает класс (friend), точка в конце означает, что далее многостраничный текст
-### <a name="Комментарии"></a> Комментарии
-Существуют различные комментариев: те, которые будут отображаться после компиляции, и те, которые пропадут.
+  <?php
+    echo $_POST['username'];
+    echo "br";
+    echo $_POST['username'];
+    echo "br";
+    echo $_POST['username'];
+  ?>
 
-Pug
-````pug
-// just some paragraphs
+.friend. - точка вначале обозначает класс (friend),
+точка в конце означает, что далее многостраничный текст
+
+Комментарии
+Существуют различные комментариев: те,
+которые будут отображаться после компиляции,
+и те, которые пропадут.
+
+Pug                                             HTML
+// just some paragraphs                         <!-- just some paragraphs -->
 //- will not output within markup
-p foo
-p bar
-````
-HTML
-````html 
-<!-- just some paragraphs-->
-<p>foo</p>
-<p>bar</p>
-````
-***
-Pug
-````pug
-body
-  //-
-    Comments for your template writers.
+p foo                                           <p>foo</p>
+p bar                                           <p>bar</p>
+
+Pug                                             HTML
+body                                            <body>
+  //-                                           <!--Comments for your HTML readers. Use as much text as you want.-->
+    Comments for your template writers.         </body>
     Use as much text as you want.
   //
     Comments for your HTML readers.
     Use as much text as you want.
-````
-HTML
-````html 
-<body>
-  <!--Comments for your HTML readers.
-Use as much text as you want.-->
-</body>
-````
-### <a name="Условия"></a> Условия
-Pug
-````pug
-- var user = { description: 'foo bar baz' }
-- var authorised = false
-#user
-  if user.description
+
+Условия
+Pug                                             HTML
+- var user = { description: 'foo bar baz' }     <div id="user">
+- var authorised = false                            <h2 class="green">Description</h2>
+#user                                               <p class="description">foo bar baz</p>
+  if user.description                           </div>
     h2.green Description
     p.description= user.description
   else if authorised
@@ -547,223 +629,120 @@ Pug
   else
     h2.red Description
     p.description User has no description
-````
-HTML
-````html
-<div id="user">
-  <h2 class="green">Description</h2>
-  <p class="description">foo bar baz</p>
-</div>
-````
-### <a name="Тип-документа"></a> Тип документа
-Pug
-````pug
-doctype html
-````
-HTML
-````html 
-<!DOCTYPE html>
-````
-### <a name="Инклюды"></a> Инклюды (Includes)
+
+Тип документа
+Pug                                             HTML                         
+doctype html                                    <!DOCTYPE html>
+
+Инклюды (Includes)
 Pug имеет возможность вставки содержимого одного файла в другой файл Pug.
 
-Pug
-````pug
-//- index.pug
-doctype html
-html
-  head
-    style
-      include style.css
-  body
-    h1 My Site
-    p Welcome to my super lame site.
-    script
-      include script.js
-````
-CSS
-````css
-/* style.css */
-h1 {
-  color: red;
-}
-````
+Pug                                             HTML
+doctype html                                    <!DOCTYPE html>
+html                                            <html>
+  head                                          <head>
+    style                                           <style>  /* style.css */
+    include style.css                                 h1 {
+  body                                                      color: red;   
+    h1 My Site                                          }
+    p Welcome to my super lame site.                </style>
+    script                                      </head>
+      include script.js                         <body>
+                                                    <h1>My Site</h1>
+CSS                                                 <p>Welcome to my super lame site.</p>
+                                                  <script>  /* script.js */
+h1 {                                                    console.log('You are awesome');
+  color: red;                                       </script>
+}                                               </body>
+                                                </html>
 JavaScript
-````js
-// script.js
+/* script.js */
 console.log('You are awesome');
-````
-HTML
-````html 
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    /* style.css */
-    h1 {
-      color: red;
-    }
-  </style>
-</head>
-<body>
-  <h1>My Site</h1>
-  <p>Welcome to my super lame site.</p>
-  <script>
-    // script.js
-    console.log('You are awesome');
-  </script>
-</body>
-</html>
-````
-### <a name="Наследование-шаблонов"></a> Наследование шаблонов
 
-Pug поддерживает наследование шаблонов. Наследование шаблонов работает через ключевые слова `block` и `extend`. В шаблоне `block` - обычный блок Pug, который может заменить дочерний шаблон. Этот процесс является рекурсивным.
+Наследование шаблонов
+Pug поддерживает наследование шаблонов.
+Наследование шаблонов работает через ключевые слова `block` и `extend`.
+В шаблоне `block` - обычный блок Pug, который может заменить дочерний шаблон.
+Этот процесс является рекурсивным.
 
-Pug
-````pug
-//- base.pug
-html
-  head
-    title My Site 
-    block scripts
-      script(src='/jquery.js')
-  body
-    block content
-    block foot
-      #footer
-        p some footer content
-        
-//- home.pug
-extends base.pug
-- var title = 'Animals'
+Pug                                             HTML
+/* base.pug */                                  <!DOCTYPE html>
+html                                            <html>
+  head                                          <head>
+    title My Site                                   <title>My Site</title>
+    block scripts                                   <script src='/jquery.js'></script>
+      script(src='/jquery.js')                  </head>
+  body                                          <body>
+    block content                                   <h1>Animals</h1>
+    block foot                                      <p>cat</p>
+      #footer                                       <p>dog</p>
+        p some footer content                       <div id='footer'>
+                                                        <p>some footer content</p>     
+/* home.pug */                                      </div>
+extends base.pug                                </body>
+- var title = 'Animals'                         </html>
 - var pets = ['cat', 'dog']
 block content
-  h1= title // - or #{title} without =
+  h1= title /* or #{title} without = */
   each petName in pets
-    p= petName // -or #{petName} without =
-````
-HTML
-````html 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My site</title>
-  <script src='/jquery.js'></script>
-</head>
-<body>
-  <h1>Animals</h1>
-  <p>cat</p>
-  <p>dog</p>
-  <div id='footer'>
-    <p>some footer content</p>
-  </div>
-</body>
-</html>
-````
-### <a name="Интерполяция-переменных"></a> Интерполяция переменных
+    p= petName /* or #{petName} without = */
+
+Интерполяция переменных
 Pug предоставляет различные способы вывода переменных.
-
-Pug
-````pug
-- var title = "On Dogs: Man's Best Friend";
-- var author = "enlore";
-- var theGreat = "<span>escape!</span>";
-
+Pug                                             HTML
+- var title = "On Dogs: Man's Best Friend";     <h1>On Dogs: Man's Best Friend</h1>
+- var author = "enlore";                        <p>Written with love by enlore</p>
+- var theGreat = "<span>escape!</span>";        <p>This will be safe: <span>escape!</span></p>
 h1= title
 p Written with love by #{author}
 p This will be safe: !{theGreat}
-````
-HTML
-````html 
-<h1>On Dogs: Man's Best Friend</h1>
-<p>Written with love by enlore</p>
-<p>This will be safe: <span>escape!</span></p>
-````
-### <a name="Миксины"></a> Миксины
-Поддержка миксинов позволяет создавать переиспользуемые блоки.
 
-Pug
-````pug
-//- Declaration
-mixin pet(name)
-  li.pet= name
-//- use
-ul
+Миксины
+Поддержка миксинов позволяет создавать переиспользуемые блоки.
+Pug                                             HTML
+/* Declaration */                               <ul>
+mixin pet(name)                                     <li class="pet">cat</li>
+  li.pet= name                                      <li class="pet">dog</li>
+/* use */                                           <li class="pet">pig</li>
+ul                                              </ul>
   +pet('cat')
   +pet('dog')
-  +pet('pig')
-````
-HTML
-````html 
-<ul>
-  <li class="pet">cat</li>
-  <li class="pet">dog</li>
-  <li class="pet">pig</li>
-</ul>
-````
-***
-Pug
-````pug
-mixin article(title)
-  .article
-    .article-wrapper
-      h1= title
-      if block
-        block
-      else
-        p No content provided
+  +pet('pig') 
 
-+article('Hello world')
-
-+article('Hello world')
-  p This is my
+Pug                                             HTML
+mixin article(title)                            <div class="article">
+  .article                                          <div class="article-wrapper">
+    .article-wrapper                                    <h1>Hello world</h1>
+      h1= title                                         <p>No content provided</p>
+      if block                                      </div>
+        block                                   </div>
+      else                                      <div class="article">
+        p No content provided                       <div class="article-wrapper">
+                                                        <h1>Hello world</h1>
++article('Hello world')                                 <p>This is my</p>
+                                                        <p>Amazing article</p>
++article('Hello world')                             </div>
+  p This is my                                  </div>
   p Amazing article
-````
-HTML
-````html 
-<div class="article">
-  <div class="article-wrapper">
-    <h1>Hello world</h1>
-    <p>No content provided</p>
-  </div>
-</div>
-<div class="article">
-  <div class="article-wrapper">
-    <h1>Hello world</h1>
-    <p>This is my</p>
-    <p>Amazing article</p>
-  </div>
-</div>
-````
-***
-Pug
-````pug
-mixin link(href, name)
-  //- attributes == {class: "btn"}
+
+Pug                                             HTML
+mixin link(href, name)                          <a class="btn" href="/foo">foo</a>
+/* attributes == {class: "btn"} */
   a(class!=attributes.class href=href)= name
 
 +link('/foo', 'foo')(class="btn")
-````
-HTML
-````html 
-<a class="btn" href="/foo">foo</a>
-````
 
-### <a name="Ассоциативный-массив"></a> Многострочный ассоциативный массив
+Многострочный ассоциативный массив
 Pug
-````pug
 -
   var priceItem = [
     {include: filterInc, parameter : "Розовый фильтр"},
     {include: smileInc, parameter : "Смайлики"},
     {include: commentInc, parameter : "Комментарии"}
   ]
-````
 
-
-# CSS
-[W3schools](https://www.w3schools.com/css/default.asp)
-````css
+CSS
+W3schools https://www.w3schools.com/css/default.asp
 селектор {
 	свойство: значение;
 }
@@ -811,44 +790,34 @@ line
 letter
 flexbox
 grid
-````
+position
+display
 
 
-# SCSS
-
-# jQuery
-[jQuery](https://jquery.com)
-[W3schools](https://www.w3schools.com/jquery/default.asp)
+jQuery
+jQuery https://jquery.com
+W3schools https://www.w3schools.com/jquery/default.asp
 https://core.trac.wordpress.org/query
 
 (function( $ ) {alert($.fn.jquery);}) - проверить версию
 
-### Подключить
-```
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> - подключить jQuery
-```
+Подключить
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 compressed - сжатая и минифицированная, поключают к готовому сайту
 uncompressed - обычная, удобочитаемая, поключают при разработке
 slim - без анимации и без Ajax
 
-### Скрипт
-
-```
+Скрипт
 $(document).ready(function() { - запускать скрипт только после загрузки страницы
 	$("button").on("click", function() { - при нажатии кнопки
 		$("h1").hide(3000); - скрыть заголовок в течении 3-х секунд
 	});
 });
-```
 
-### Селекторы
-```
+Селекторы
 $('a'); = document.querySelectorAll("a");
-
-
 $("sel").method();
-
 - Базовые
 - Иерархические
 - Атрибутные
@@ -877,16 +846,11 @@ $('a[target="_blank"]') - выбрать элементы с атрибутом 
 :password
 :disabled
 :file
-...
-```
 
-### CSS
-```
+CSS
 $("p").css("background-color", "#2ecc71");
-```
 
-### Регулярные выражения
-```
+Регулярные выражения
 ^ - циркумфлекс, значение начинается с указанной подстроки
 $ - доллар, значение заканчивается указанной подстрокой
 ~ - тильда, значение содержит указанное слово
@@ -902,10 +866,8 @@ $('a[href$=".ru"]') - href заканчивается на .ru
 $('a[title~="Яндекс"]') - title содержит слово Яндекс
 $('a[title*="epe"]') - title содержит подстроку ере
 $('a[href!="https://www.google.com"]') - выберет элементы, у которых либо нет указанного атрибута, либо у атрибута другое значение
-```
 
-### Фильтры
-```
+Фильтры
 $("li:first").css("color", "green");
 - Базовые
 	:first, :last, :even, :odd - первый, последний, чётный, нечётный из выборки
@@ -921,47 +883,43 @@ $("li:first").css("color", "green");
 $("li").filter(":first").css("color", "green"); - extensions
 :first - не является частью языка css, поэтому через метод filter()
 
-```
 
 # WordPress
-[Laragon](https://laragon.org/download/)
+WordPress https://developer.wordpress.org/
+Codex https://codex.wordpress.org/
+WP-Kama https://wp-kama.ru
+Woocommerce https://developer.woocommerce.com/docs/
 
-[WPdev](https://developer.wordpress.org/)
-[Codex](https://codex.wordpress.org/)
-[WP-Kama](https://wp-kama.ru)
-[Дочерняя тема](https://www.antijeans.com/wordpress/nastraivaem-temu-wordpress-twenty-twenty-four/)
-
-[Woo Developer Docs](https://developer.woocommerce.com/docs/category/getting-started/)
-## Plugins
+Plugins
 Advanced Custom Fields PRO
 Contact Form 7
 Site Kit by Google
 SVG Support
 UpdraftPlus - Backup/Restore
 Wordfence Security
-Select Yoast SEO  
+Select Yoast SEO
 Yoast SEO
 Cyr to lat
 Show current template
-[Woocommerce](https://developer.woocommerce.com/docs/?_gl=1*b4d33v*_ga*MTE1NjYxNzM4OS4xNzI4MTE4OTEw*_ga_98K30SHWB2*MTcyODExODkwOS4xLjEuMTcyODEzMTQ5Ny4wLjAuMA..*_gcl_au*MjA1ODQ3ODg4LjE3MjgxMTg5MDk.)
-### Block
 
+Theme block
+Генератор блочных тем https://fullsiteediting.com/block-theme-generator/)
 
-## Theme classic
-[Генератор классических тем](https://underscores.me/)
-[Посадка верстки на wordpress](https://www.youtube.com/watch?v=CGz7-22mX4M)
+Theme classic
+Генератор классических тем https://underscores.me
+Посадка верстки на wordpress https://www.youtube.com/watch?v=CGz7-22mX4M
 1. нативными функциями: 
 	- создать файлы страниц
 	- связать файлы страниц со страницами в админке
 	- подключить стили и скрипты
 	- поменять пути к картинкам и шрифтам
 	- возможность менять и добавлять контент из админки
-2. [ACF](https://www.youtube.com/watch?v=Q5zcWpRMl9s)
-### style.css
-### index.php
-### screenshot.png
-### functions.php
-````PHP
+2. ACF https://www.youtube.com/watch?v=Q5zcWpRMl9s
+style.css
+index.php
+screenshot.png
+functions.php
+
 add_action( 'wp_enqueue_scripts', function () { 
 	wp_enqueue_style( 'style', get_template_directory_uri() . /assets/css/style.min.css ); 
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), 'null', true );
@@ -970,33 +928,28 @@ add_action( 'wp_enqueue_scripts', function () {
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'custom-logo' );
-````
-### header.php
 
-````html
+/* header.php */
 <html <?php language_attributes(); ?>>
-<meta charset="<?php bloginfo('charset'); ?>">
+<meta charset="<?php bloginfo('charset'); ?>">
 <?php the_custom_logo(); ?>
-<img src="<?php bloginfo('template_url'); ?>/assets/images/1.jpg" alt="Image">
-````
-````PHP
+<img src="<?php bloginfo('template_url'); ?>/assets/images/1.jpg" alt="Image">
 wp_head();
-````
-### footer.php
 
-### front-page.php
-````PHP
-<?php /* 
-Template Name: front 
+/* footer.php */
+
+/* front-page.php */
+<?php 
+/* 
+* Template Name: front 
 */
 ?>
 get_header();
-
 <? код страниц ?>
 
 <?php global $post; 
 $myposts = get_posts([ 
-	'numberposts' => -1,            // Вывести все записи
+	'numberposts' => -1,            /* Вывести все записи */
 ]); 
 if( $myposts ){ 
 	foreach( $myposts as $post ){ 
@@ -1005,163 +958,1222 @@ if( $myposts ){
 		<? Верстка ?>
 <?php }
 }
-wp_reset_postdata();                        // Сбрасываем $post 
+wp_reset_postdata();               /* Сбрасываем $post */
 ?>
 
 get_footer();
-````
 
 contact form 7
-````php
 <?php echo do_shortcode('[contact-form-7...]') ?>
-````
 
-### ACF
-[Скачать про](https://verstach.ru/acf-advanced-custom-fields-pro-v6-0-7-proizvolnye-polya-dlya-wordpress/)
+ACF
+Скачать про https://verstach.ru/acf-advanced-custom-fields-pro-v6-0-7-proizvolnye-polya-dlya-wordpress/
 Стандартный вывод информации из ACF (текст, ссылка на картинку и т.п.):
-````php
 <?php the_field('имя_поля'); ?>
-````
+
 Вывод повторителя:
-````php
 <?php if(get_field('имя_повторителя')): ?>
 	<?php while(has_sub_field('имя_повторителя')) : ?>
-	   <div class="slide">`
-	      <img src="<?php the_sub_field('имя_поля'); ?>">
-	   </div>
+	  <div class="slide">`
+	    <img src="<?php the_sub_field('имя_поля'); ?>">
+	  </div>
 	<?php endwhile; ?>
 <?php endif; ?>
-````
+
 Повторитель в повторителе:
-````php
 <?php if(get_field('имя_повторителя_1')): ?>
 	<?php while(has_sub_field('имя_повторителя_1')) : ?>
-	   <div class="slide">
-	      <img src="<?php the_sub_field('имя_поля_повторителя_1'); ?>">
-	      
-	      <ul class="list">
-	         <?php if(get_sub_field('имя_повторителя_2')): ?>
-		         <?php while(has_sub_field('имя_повторителя_2')) : ?>
-		            <li><?php the_sub_field('имя_поля_повторителя_2'); ?></li>
-		         <?php endwhile; ?>
-	         <?php endif; ?>
-	      </ul>
-	      
-	   </div>
+	  <div class="slide">
+	    <img src="<?php the_sub_field('имя_поля_повторителя_1'); ?>">
+      <ul class="list">
+        <?php if(get_sub_field('имя_повторителя_2')): ?>
+        <?php while(has_sub_field('имя_повторителя_2')) : ?>
+          <li><?php the_sub_field('имя_поля_повторителя_2'); ?></li>
+        <?php endwhile; ?>
+        <?php endif; ?>
+      </ul>
+	  </div>
 	<?php endwhile; ?>
 <?php endif; ?>
-````
+
 Вывод группы полей:
-````php
 <?php if( have_rows('имя_группы') ): ?>
 <?php while( have_rows('имя_группы') ): the_row(); ?>
-   <a href="<?php the_sub_field('имя_поля_группы'); ?>"><i class="fa fa-vk" aria-hidden="true"></i></a>
-   <a href="<?php the_sub_field('имя_поля_группы'); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="<?php the_sub_field('имя_поля_группы'); ?>"><i class="fa fa-vk" aria-hidden="true"></i></a>
+  <a href="<?php the_sub_field('имя_поля_группы'); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 <?php endwhile; ?>
 <?php endif; ?>
-````
+
 Тип поля “Галерея”
-````php
 <?php if ($img_gallery = get_field("имя_галереи")) : ?>
-    <?php foreach ($img_gallery as $img) : ?>
-        <?php if ($img) : ?>
-            <?= "<img`
-                `src="<?= esc_url($img['sizes']['thumbnail']) ?>"`
-                `alt="<?= esc_attr($img['alt']) ?>"`
-                `loading="lazy"`
-                `width="<?= esc_attr($image_array['width']) ?>"`
-                `height="<?= esc_attr($image_array['height']) ?>"`
-            `/>" ?>
-        <?php endif; ?>
-    <?php endforeach; ?>
+  <?php foreach ($img_gallery as $img) : ?>
+    <?php if ($img) : ?>
+      <?= "<img`
+        `src="<?= esc_url($img['sizes']['thumbnail']) ?>"`
+        `alt="<?= esc_attr($img['alt']) ?>"`
+        `loading="lazy"`
+        `width="<?= esc_attr($image_array['width']) ?>"`
+        `height="<?= esc_attr($image_array['height']) ?>"`
+      `/>" ?>
+    <?php endif; ?>
+  <?php endforeach; ?>
 <?php endif; ?>
-````
+
 Тип поля “Объект записи”
-````php
 <?php if ($post_objects = get_field("имя_объекта_записи")) : ?>
-    <?php
-    foreach ($post_objects as $post) : setup_postdata($post); ?>
-        <?php if ($post) : ?>
-            <?php the_title(); ?>
-            <?php the_excerpt(); ?>
-            <?php the_field("имя_поля_объекта_записи"); ?>
-            <?php the_permalink(); ?>
-        <?php endif; ?>
-    <?php endforeach; ?>
-    <?php wp_reset_postdata(); ?>
+  <?php
+  foreach ($post_objects as $post) : setup_postdata($post); ?>
+    <?php if ($post) : ?>
+      <?php the_title(); ?>
+      <?php the_excerpt(); ?>
+      <?php the_field("имя_поля_объекта_записи"); ?>
+      <?php the_permalink(); ?>
+    <?php endif; ?>
+  <?php endforeach; ?>
+  <?php wp_reset_postdata(); ?>
 <?php endif; ?>
-````
+
 Тип поля “Гибкое содержание”
-````php
 <?php if (have_rows('имя_гибкого_содержания')) : ?>
-    <?php while (have_rows('имя_гибкого_содержания')) : the_row(); ?>
-        <?php if (get_row_layout() == 'hero') : ?>
-            <?php get_template_part("template-parts/hero-section") ?>
-        <?php elseif (get_row_layout() == 'about') : ?>
-            <?php get_template_part("template-parts/about-section") ?>
-        <?php elseif (get_row_layout() == 'contacts') : ?>
-            <?php get_template_part("template-parts/contacts-section") ?>
-        <?php endif; ?>
-    <?php endwhile; ?>
+  <?php while (have_rows('имя_гибкого_содержания')) : the_row(); ?>
+    <?php if (get_row_layout() == 'hero') : ?>
+      <?php get_template_part("template-parts/hero-section") ?>
+    <?php elseif (get_row_layout() == 'about') : ?>
+      <?php get_template_part("template-parts/about-section") ?>
+    <?php elseif (get_row_layout() == 'contacts') : ?>
+      <?php get_template_part("template-parts/contacts-section") ?>
+    <?php endif; ?>
+  <?php endwhile; ?>
 <?php endif; ?>
-````
+
 Тип поля “Ссылка”
-````php
 <?php if (get_field('имя_ссылки')) : ?>
-    <a href="<?= get_field('имя_ссылки')['url'] ?>" target="<?= get_field('имя_ссылки')['target'] ?>"><?= get_field('имя_ссылки')['title'] ?></a>
+  <a href="<?= get_field('имя_ссылки')['url'] ?>" target="<?= get_field('имя_ссылки')['target'] ?>"><?= get_field('имя_ссылки')['title'] ?></a>
 <?php endif; ?>
-````
+
 Вывод поля ACF только если оно заполнено
-````php
 <?php if (get_field("имя_поля")) { ?>
-    <?php the_field("имя_поля"); ?>
+  <?php the_field("имя_поля"); ?>
 <?php } ?>
-````
+
 Страница опций ACF
-````php
 if (function_exists("acf_add_options_page")) {
-    acf_add_options_page(array(
-        "page_title" => "Опции темы",
-        "menu_title" => "Опции темы",
-        "menu_slug"  => "theme_settings",
-    ));
+  acf_add_options_page(array(
+    "page_title" => "Опции темы",
+    "menu_title" => "Опции темы",
+    "menu_slug"  => "theme_settings",
+  ));
 }
-````
+
 Вывод полей из страницы с опций
-````php
 <?php the_field("имя_поля", "option"); ?>
-````
-Для нумерации строк в плагине Advanced Custom Fields (ACF) необходимо использовать функцию get_field(), которая позволяет извлечь данные из поля.
+
+Для нумерации строк в плагине Advanced Custom Fields (ACF) необходимо использовать функцию get_field(),
+которая позволяет извлечь данные из поля.
 В примере ниже строки будут нумероваться с помощью цикла for:
-````php
 <?php if( have_rows('service') ): $i = 0; ?>
 <?php while ( have_rows('service') ) : the_row(); $i++; ?>
-        <?php echo $i; ?>
+  <?php echo $i; ?>
 <? endwhile; endif; ?>
-````
 
-## Theme block
-[Генератор блочных тем](https://fullsiteediting.com/block-theme-generator/)
+<details>
+            <summary>Structure</summary>
+            <div>
+              Темы берут контент, хранящийся в WordPress, и отображают его в браузере.
+              HTML, CSS, PHP, JSON и JavaScript - wp stack.
+              Используйте имя вашей темы для создания пространства имен.
+              https://codex.wordpress.org/Theme_Unit_Test
+              https://wordpress.org/plugins/theme-check/
+              https://wordpress.org/plugins/debug-bar/
+              https://wordpress.org/plugins/query-monitor/
+              https://wordpress.org/plugins/log-deprecated-notices/
+              Редактор сайта: Внешний вид > Редактор в меню администратора WordPress.
+              Пункт «Стили» на панели меню.
+              Выбрать иконку Style Book (глаз) - полный доступ к изменению глобальных стилей сайта.
+              Экспортировать тему из интерфейса редактора сайта, нажмите кнопку ⋮ (Параметры) в области заголовка. Нажмите кнопку Экспорт.
+              Распаковать архив, переименовать папку с темой, отредактировать шапку style.css и заархивировать папку в zip.
+              https://wordpress.org/plugins/create-block-theme/
+              После активации Create Block Theme вы должны увидеть новую кнопку в редакторе сайта, которая отображается как значок гаечного ключа. Нажмите эту кнопку, чтобы открыть меню Create Block Theme .
+              - assets/
+                   - css/
+                       - core-site-title.css
+              - images/
+                   - header-background.png
+              - js/
+                   - navigation.js
+              - inc/
+                   - ClassName.php
+                   - functions-helpers.php
+              - parts/
+                   - footer.html
+                   - header.html
+              - patterns/
+                   - example.php
+              - styles/
+                   - example.json
+              - templates/
+                   - 404.html
+                   - archive.html
+                   - index.html(необходимый)
+                   - singular.html
+              - .editorconfig
+              - .gitattributes
+              - .gitignore
+              - CHANGELOG.md
+              - LICENSE.md
+              - README.txt
+              - functions.php
+              - package.json
+              - screenshot.png
+              - style.css(необходимый)
+              - theme.json
+              - style.css (основная таблица стилей): этот файл необходим для настройки данных темы, таких как ее имя и описание. Его также можно использовать для добавления пользовательского CSS.
+              - templates/index.html (шаблоны): Шаблон по умолчанию/запасной вариант. Это необходимо для того, чтобы WordPress считал это блочной темой.
+              - README.txt (обзор темы)
+                
+              - screenshot.png (скриншот темы 1200×900)
+              - theme.json(глобальные настройки и стили)
+              - parts(Template Parts): содержит пользовательские части шаблона темы.
+              - patterns(Шаблоны блоков): Многоразовые шаблоны, состоящие из одного или нескольких блоков, которые пользователи могут вставлять через интерфейс редактора. WordPress автоматически регистрирует файлы, включенные в эту папку.
+              - styles(Вариации стилей): вариации глобальных настроек и стилей темы, хранящиеся в отдельных файлах JSON.
+              - templates(Шаблоны): Файлы, которые представляют общую структуру документа front-end.
+              - inc(Пользовательская функциональность): темы часто будут иметь пользовательские PHP-классы или файлы.
+              -.editorconfig( EditorConfig ): используется для настройки форматирования, такого как окончания строк и интервалы, для редакторов кода.
+              - .gitattributes( Git: Атрибуты ): Настраивает атрибуты с помощью системы контроля версий Git.
+              - .gitignore( Git: Ignore ): определяет файлы, которые следует игнорировать при фиксации кода в репозитории Git.
+              - CHANGELOG.md( Ведите журнал изменений ): понятный человеку журнал важных изменений для каждого выпуска вашей темы.
+              - LICENSE.md( Обзор темы: Лицензирование и авторские права ): Определяет лицензию для темы. Обратите внимание, что все темы, отправленные в каталог тем WordPress, должны быть лицензированы по GPL v2+.
+              - package.json( npm: package.json ): часто используется для определения процесса сборки и зависимостей разработки в среде Node.
+              WordPress автоматически обрабатывает окончательную разметку, поэтому вам остается только создать шаблоны.
+            </div>
+          </details>
+          <details>
+            <summary>functions.php</summary>
+            <div>
+              Есть несколько причин, по которым вы можете увидеть сломанный сайт с белым экраном. Одна из таких причин — когда файл functions.php(или любой файл PHP) имеет пробел после закрывающего ?>
+              <?php
+              add_action( 'after_setup_theme',
+              function () {
+              add_theme_support( 'wp-block-styles' );
+              } );
+              include get_parent_theme_file_path( 'inc/helpers.php' ); - подключить файл из родительской темы
+              include get_theme_file_path( 'inc/helpers.php' ); - подключить файл из дочерней темы
+              Возвращает URL-адрес:
+              - get_stylesheet_uri(): Возвращает URL-адрес файла активной темы style.css.
+              - get_theme_file_uri( $file ): Возвращает URL активной темы с необязательным $fileпараметром. Возвращается к родительской теме, если активна дочерняя тема и файл не существует.
+              - get_parent_theme_file_uri( $file ): Возвращает URL-адрес родительской темы с необязательным $fileпутем.
+              Возвращает путь к каталогу:
+              - get_theme_file_path( $file ): Возвращает путь к каталогу активной темы с необязательным $fileпараметром. Возвращается к родительской теме, если активна дочерняя тема и файл не существует.
+              - get_parent_theme_file_path( $file ): Возвращает путь к каталогу родительской темы с необязательным $fileпараметром.
+              Стили:
+              add_action( 'wp_enqueue_scripts',
+              function () {
+              wp_enqueue_style( // ставлю в очередь style.css
+                'theme-slug-style',
+                get_stylesheet_uri()
+              );
+              wp_enqueue_style( // ставлю в очередь primary.css
+                'theme-slug-primary',
+                get_parent_theme_file_uri( 'assets/css/primary.css' )
+              );
+              wp_add_inline_style( // добавляю CSS в <head> область на фронтенде
+                'theme-slug-primary', // при подключении primary.css
+                'body { background: #eee; }'
+              );
+              } );
+              Чтобы пользовательские стили отображались в редакторе:
+              add_action( 'after_setup_theme',
+              function () {
+              add_editor_style( array(
+                get_stylesheet_uri(),
+                get_parent_theme_file_uri( 'assets/css/primary.css' )
+              ) );
+              } );
+              wp_enqueue_block_style() - функция загрузки таблиц стилей для каждого блока в редакторе и на фронтенде.
+              JS:
+              add_action( 'wp_enqueue_scripts',
+              function () {
+              wp_enqueue_script( // ставлю в очередь navigation.js
+                'theme-slug-navigation',
+                get_parent_theme_file_uri( 'assets/js/navigation.js' ),
+                array(),
+                wp_get_theme()->get( 'Version' ),
+                true
+              );
+              wp_add_inline_script( // добавляю JS в <head> область на фронтенде
+                'theme-slug-navigation',
+                'console.log( "Testing" );'
+              );
+              } );
+              enqueue_block_editor_assets - JS для редактора блоков
+              add_action( 'enqueue_block_editor_assets', 'theme_slug_enqueue_editor_scripts'
+              function () {
+              wp_enqueue_script( // ставлю в очередь editor.js для редактора
+                'theme-slug-editor',
+                get_parent_theme_file_uri( 'assets/js/editor.js' ),
+                array(),
+                wp_get_theme()->get( 'Version' ),
+                true
+              );
+              } );
+              Управление скриптами - @wordpress/scripts
+              Список включенных скриптов - wp-includes/script-loader.php
+              Обращение к файлу изображения:
+              <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/example.webp' ) ); ?>" alt="" />
+              Шрифты подключать через theme.json
+            </div>
+          </details>
+          <details>
+            <summary>theme.json</summary>
+            <div>
+              theme.json - отражено в редакторе
+ - Включить или отключить такие функции, как буквицы, отступы, поля и высота строки.
+ - Добавить цветовую палитру, градиенты, дуплексы и тени.
+ - Настроить типографские функции, такие как семейства шрифтов, размеры и многое другое.
+ - Добавить пользовательские свойства CSS.
+ - Регистрация пользовательских шаблонов, частей шаблонов и назначение деталей областям шаблонов.
+{
+ "$schema": "https://schemas.wp.org/trunk/theme.json",
+ "version": 2,
+ "settings": {},
+ "styles": {},
+ "customTemplates": {},
+ "templateParts": {},
+ "patterns": []
+}
+ - $schema: используется для определения поддерживаемой схемы JSON, которая будет интегрироваться со многими редакторами кода, предоставляя вам подсказки и сообщения об ошибках «на лету».
+ - version: Версия theme.json схемы, для которой вы строите. Последняя версия — 2, ее всегда можно найти в theme.json Living Reference — документе, в котором перечислены самые последние свойства, которые вы можете задать.
+ - settings: используется для определения элементов управления блоками, цветовых палитр, размеров шрифтов и многого другого.
+ - styles: используется для применения цветов, размеров шрифтов, пользовательских CSS и т. д. к веб-сайту и блокам.
+ - customTemplates: Метаданные для пользовательских шаблонов, определенных в папке вашей темы /templates.
+ - templateParts: Метаданные для частей шаблона, определенных в папке вашей темы /parts.
+ - patterns: Массив шаблонов, которые необходимо зарегистрировать из каталога шаблонов .
+Динамически переопределить значения в theme.json:
+https://developer.wordpress.org/news/2023/07/how-to-modify-theme-json-data-using-server-side-filters/
+theme.json - глобальные настройки, стили и т.д. для блочных и классических тем, отображаются как на фронтенде так и в редакторе.
+{
+        "$schema": "https://schemas.wp.org/trunk/theme.json",
+ "version": 2,
+        "settings": {},
+ "styles": {},
+ "customTemplates": {},
+ "templateParts": {},
+ "patterns": []
+}
 
-# React
+ - $schema: используется для определения поддерживаемой схемы JSON, которая будет интегрироваться со многими редакторами кода, предоставляя вам подсказки и сообщения об ошибках «на лету».
 
-# PHP
+ - version(обязательно): Версия theme.json схемы, для которой вы строите. https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference/theme-json-living/
 
-# Laravel
+ - settings: Используется для определения отображаемых элементов управления блоками, настройки предустановок и многого другого.
+ "settings": {
+  "appearanceTools": false, - включение других настроек. При обновлении WordPress может автоматически включить в тему новые инструменты дизайна в будущем.
 
-# SlimPHP
+  "border": {}, - управление шириной, стилем, цветом и радиусом границы.
+Настройка границ блоков, предоставляет доступные параметры в редакторе.
+ - color: Включает/отключает выбор цвета границы.
+ - radius: Включает/отключает управление радиусом границы.
+ - style: Включает/отключает селектор стиля границы (пользователи могут выбрать solid, dashedили dotted).
+ - width: Включает/отключает ввод ширины границы.
 
-# SQL
-[W3schools](https://www.w3schools.com/sql/default.asp)
+  "color": {}, - регистрировать цветовую палитру, градиенты, дуплекс.
+Предустановки, которые пользователи могут выбирать.
+ "settings": {
+  "color": {
+   "background": true, - пользователь может настраивать фон глобально (по умолчанию true).
+                       "link": true, - пользователь может настраивать ссылки глобально (по умолчанию true).
+                       "text": true, - пользователь может настраивать текст глобально (по умолчанию true).
+   "custom": true, - пользователь может создавать и использовать собственные цвета для блоков (по умолчанию true).
+   "customDuotone": true, - пользователь может создавать собственные двухцветные фильтры (обычно используемые для наложения на блоки с изображениями) для блоков (по умолчанию true).
+   "customGradient": true, - пользователь может создавать собственные градиенты фона для блоков (по умолчанию true).
+   "defaultDuotone": true, - пользователь может выбирать из стандартных предустановок WordPress (по умолчанию true).
+   "defaultGradients": true, - - пользователь может выбирать из стандартных предустановок WordPress (по умолчанию true).
+   "defaultPalette": true, - - пользователь может выбирать из стандартных предустановок WordPress (по умолчанию true).
+   "duotone": [], - регистрация пользовательских цветовых пресетов двухцветных фильтров, из которых пользователь может выбирать.
+Регистрация двухцветного фильтра
+"duotone": [
+   {
+    "colors": [
+     "#450a0a",
+     "#fef2f2"
+    ],
+    "name": "Red",
+    "slug": "red"
+   }
+                  ]
+   "gradients": [], - регистрация пользовательских цветовых пресетов градиентов, из которых пользователь может выбирать.
+Регистрация градиента
+"gradients": [
+            {
+    "gradient": "linear-gradient(to right, #10b981, #64a30d)",
+    "name": "Emerald",
+    "slug": "emerald"
+           }
+                    ]
+   "palette": [] - регистрация пользовательских цветовых пресетов цвета, из которых пользователь может выбирать.
+Пресет цветовой палитры с заголовком contrast станет
+--wp--preset--color--contrast.
+WordPress генерирует CSS-классы на основе предустановки
+.has-contrast-color.
+Регистрация цвета
+  "palette": [
+    {
+     "color": "#ffffff",
+     "name": "Base",
+     "slug": "base"
+    }
+                        ]
+  }
+ }
+Слаг base - для фона сайта, а contrast - для текста.
 
-# Rust
-Esbuild - сборщик для фронта
-Yew - framework for building front-end web apps
-Percy - библиотека для rust web apps
-Seed - Rust framework for creating fast and reliable web apps
-Sycamore - library for creating web apps
-Laptos
-Stork - простая библиотека, основанная на фичах, для рекурсивного сканирования источников в стиле поисковой системы.
-SWC - Speedy Web Compiler - Rust-based platform for the Web
+  "custom": {}, - пользовательские свойства CSS
+{
+ "version": 2,
+ "settings": {
+  "custom": {
+   "lineHeight": "1.4em"
+  }
+ }
+}
+создаст:
+body {--wp--custom--line-height: 1.4em;}
+
+{
+ "version": 2,
+ "settings": {
+  "custom": {
+   "lineHeight": {
+    "xs": "1",
+    "sm": "1.25",
+    "md": "1.5",
+    "lg": "1.75"
+   }
+  }
+ }
+}
+создаст:
+body {
+ --wp--custom--line-height--xs: 1;
+ --wp--custom--line-height--sm: 1.25;
+ --wp--custom--line-height--md: 1.5;
+ --wp--custom--line-height--lg: 1.75;
+}
+получить доступ к свойству line-height
+var:custom|line-height|md либо var( --wp--custom--line-height--md )
+
+пресеты — это стандартизированный метод создания опций в интерфейсе и генерации пользовательских свойств CSS.
+
+  "dimensions": {}, - минимальная высота, включает управление минимальной высотой блока в редакторе
+
+  "layout": {}, - свойства макета, такие как ширина контента и ширина блока.
+В WordPress есть отдельная настройка полной ширины.
+{
+ "version": 2,
+ "settings": {
+  "layout": {
+   "contentSize": "40rem",
+   "wideSize": "64rem"
+  }
+ }
+}
+"wideSize": "64rem" - блок выходит за рамки контентной части.
+
+                "lightbox: {}", - настроить функцию лайтбокса изображения.
+Включает функцию лайтбокса, которая расширяет изображение, когда посетитель сайта нажимает на изображение.
+Относится только к основному блоку изображений (core/image).
+{
+ "version": 2,
+ "settings": {
+  "blocks": {
+   "core/image": {
+    "lightbox": {
+     "enabled": true, - включить функцию лайтбокса
+                                       "allowEditing": true - позволяет пользователю включать/отключать лайтбокс для отдельных изображений.
+    }
+   }
+  }
+ }
+}
+
+  "position": {}, - поддержкa липкого позиционирования
+{
+ "version": 2,
+ "settings": {
+  "position": {
+   "sticky": true - прикрепит блок к его ближайшему родителю, когда пользователь прокручивает страницу.
+  }
+ }
+}
+Липкий заголовок нельзя использовать в части шаблона Header. Нужно обернуть его в содержащий блок Group и применить липкое позиционирование к Group.
+
+
+  "shadow": {}, - поддержка box-shadow и пользовательские предустановки теней.
+{
+ "version": 2,
+ "settings": {
+  "shadow": {
+   "defaultPresets": true, - предустановки тени WordPress по умолчанию
+   "presets": [ - пользовательские тени
+    {
+     "name": "Natural",
+     "slug": "natural",
+     "shadow": "6px 6px 9px rgba(0, 0, 0, 0.2)"
+    }
+   ]
+  }
+ }
+}
+создаст:
+body { --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2); }
+
+  "spacing": {}, - отступы и интервалы
+{
+ "version": 2,
+ "settings": {
+  "spacing": {
+   "blockGap": null, - Включать ли опцию Block Spacing для блоков, которые ее поддерживают. Может быть логическим значением ( true/ false). По умолчанию null. Если установлено значение null, CSS, сгенерированный WordPress, также отключается.
+   "customSpacingSize": true, - Разрешить ли пользователям вводить пользовательские значения интервалов для блоков. По умолчанию true.
+   "margin": false, - Включать ли опцию Margin. По умолчанию false.
+   "padding": false, - Включать ли опцию Padding. По умолчанию false.
+   "spacingScale": {
+    "operator": "*",
+    "increment": 1.5,
+    "steps": 7,
+    "mediumStep": 1.5,
+    "unit": "rem"
+   }, - Объект конфигурации для определения пользовательской шкалы интервалов. WordPress определяет шкалу по умолчанию с семью шагами, которые увеличиваются на 1.5rem.
+   "spacingSizes": [], - Массив объектов нестандартного размера, которые могут переопределять масштаб интервала или добавлять его.
+   "units": [ "px", "em", "rem", "vh", "vw", "%" ] - Массив возможных единиц CSS, которые пользователи могут выбирать при добавлении собственного интервала.
+  }
+ }
+}
+Значение mediumStep всегда присваивается предустановке
+ --wp--preset--spacing--50, когда WordPress генерирует CSS, а другие предустановленные слаги в шкале расширяются вверх/вниз от этого среднего числа с шагом 10.
+
+  "typography": {}, - пользовательские размеры шрифтов и регистрация семейств шрифтов.
+{
+ "version": 2,
+ "settings": {
+  "typography": {
+   "customFontSize": true, - Разрешить ли пользователям вводить собственные размеры шрифта. По умолчанию true.
+   "fluid": false, - Включать ли плавные размеры шрифтов, которые увеличиваются на больших экранах и уменьшаются на меньших. Это можно переопределить для отдельных пользовательских размеров. По умолчанию false.
+   "fontSizes": [], - Массив объектов размера шрифта, который можно использовать для настройки доступных предустановок, из которых пользователи могут выбирать. WordPress регистрирует размеры по умолчанию small, medium, largeи x-large.
+   "dropCap": true, - Могут ли пользователи включать буквицу для первой буквы блока абзаца. По умолчанию true.
+   "fontStyle": true, - Могут ли пользователи выбирать собственный стиль шрифта. По умолчанию true.
+   "fontWeight": true, - Могут ли пользователи выбирать пользовательский вес шрифта. Диапазоны веса соответствуют стандартным весам шрифта от Thin до Black . По умолчанию true.
+   "letterSpacing": true, - Могут ли пользователи вводить пользовательское значение интервала между буквами. По умолчанию false.
+   "lineHeight": false, - Могут ли пользователи вводить пользовательскую высоту строки для текста. Нет возможности регистрировать предустановки высоты строки, поэтому эта опция включает полностью пользовательский ввод. По умолчанию false.
+   "textColumns": false, - Показывать ли параметр столбцов для текста блока. По умолчанию false.
+   "textDecoration": true, - Может ли пользователь задать оформление текста для текста блока. Доступные параметры: None , Underline и Strikethrough . По умолчанию true.
+   "textTransform": true, - Может ли пользователь изменять регистр букв для текста блока. Доступные параметры: None , Uppercase , Lowercase и Capitalize . По умолчанию true.
+   "writingMode": false - Включать ли ориентацию текста в интерфейсе, позволяя пользователям выбирать между горизонтальным и вертикальным текстом. По умолчанию false.
+  }
+ }
+}
+Регистрация системных шрифтов
+{
+ "$schema": "https://schemas.wp.org/trunk/theme.json",
+ "version": 2,
+ "settings": {
+  "typography": {
+   "fontFamilies": [
+    {
+     "name": "Primary",
+     "slug": "primary",
+     "fontFamily": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif"
+    },
+    {
+     "name": "Secondary",
+     "slug": "secondary",
+     "fontFamily": "system-ui, sans-serif"
+    }
+   ]
+  }
+ }
+}
+создаст:
+body {
+ --wp--preset--font-family--primary: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+ --wp--preset--font-family--secondary: system-ui, sans-serif;
+}
+Регистрация веб-шрифтов
+/assets
+    /fonts
+        /open-sans.woff2
+        /open-sans-italic.woff2
+
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "Primary",
+					"slug": "primary",
+					"fontFamily": "Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif"
+				},
+				{
+					"name": "Secondary",
+					"slug": "secondary",
+					"fontFamily": "'Open Sans', sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Open Sans",
+							"fontWeight": "300 800",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/open-sans.woff2" ]
+						},
+						{
+							"fontFamily": "Open Sans",
+							"fontWeight": "300 800",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/open-sans-italic.woff2" ]
+						}
+					]
+				}
+			]
+		}
+	}
+}
+создаст:
+body {
+	--wp--preset--font-family--primary: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+	--wp--preset--font-family--secondary: 'Open Sans', sans-serif;
+}
+{
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fluid": false,
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "13px"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "20px"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "36px"
+				},
+				{
+					"name": "Extra Large",
+					"slug": "x-large",
+					"size": "42px"
+				}
+			]
+		}
+	}
+}
+создаст:
+body {
+	--wp--preset--font-size--small: 13px;
+	--wp--preset--font-size--medium: 20px;
+	--wp--preset--font-size--large: 36px;
+	--wp--preset--font-size--x-large: 42px;
+} и классы
+.has-small-font-size{
+	font-size: var(--wp--preset--font-size--small) !important;
+}
+.has-medium-font-size{
+	font-size: var(--wp--preset--font-size--medium) !important;
+}
+.has-large-font-size{
+	font-size: var(--wp--preset--font-size--large) !important;
+}
+.has-x-large-font-size{
+	font-size: var(--wp--preset--font-size--x-large) !important;
+}
+
+{
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fluid": true
+		} 
+	}
+}
+body {
+	--wp--preset--font-size--small: 13px;
+	--wp--preset--font-size--medium: clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.852), 20px);
+	--wp--preset--font-size--large: clamp(22.041px, 1.378rem + ((1vw - 3.2px) * 1.983), 36px);
+	--wp--preset--font-size--x-large: clamp(25.014px, 1.563rem + ((1vw - 3.2px) * 2.413), 42px);
+}
+
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fluid": true,
+			"fontSizes": [
+				{
+					"name": "Small",
+					"size": "1rem",
+					"slug": "sm",
+					"fluid": false
+				},
+				{
+					"name": "Medium",
+					"size": "1.25rem",
+					"slug": "md",
+					"fluid": {
+						"min": "1rem",
+						"max": "1.5rem"
+					}
+				},
+				{
+					"name": "Large",
+					"size": "1.5rem",
+					"slug": "lg",
+					"fluid": {
+						"min": "1.25rem",
+						"max": "2rem"
+					}
+				}
+			]
+		}
+	}
+}
+создаст:
+body {
+	--wp--preset--font-size--sm: 1rem;
+	--wp--preset--font-size--md: clamp(1rem, 1rem + ((1vw - 0.2rem) * 1.136), 1.5rem);
+	--wp--preset--font-size--lg: clamp(1.25rem, 1.25rem + ((1vw - 0.2rem) * 1.705), 2rem);
+}
+
+  "useRootPaddingAwareAlignments": false, - заполнение корневого элемента
+
+  "blocks": {} - настройки параметров каждого блока.
+theme.json - на глобальном уровне, т.е. ко всем блокам.
+settings.block - настройки для отдельного блока.
+настройки, специфичные для блока, перезаписывают глобальные настройки.
+Все основные блоки WordPress имеют пространство имен core.
+https://developer.wordpress.org/block-editor/reference-guides/core-blocks/
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src
+ }
+
+ - styles: используется для применения цветов, размеров шрифтов, пользовательских CSS и других стилей к веб-сайту и блокам.
+ добавлять стили темы через styles позволяет пользователям настраивать их через Внешний вид > Редактор > Стили
+    theme.json поддерживает стили на трех разных уровнях:
+       - Корень (глобальный)
+       - Элементы
+       - Блоки
+ {
+	"version": 2,
+	"styles": {
+		"color": {
+			"text": "#000000",
+			"background": "#ffffff"
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"text": "#ffffff",
+					"background": "#000000"
+				}
+			}
+		},
+		"blocks": {
+			"core/code": {
+				"color": {
+					"text": "#ffffff",
+					"background": "#000000"
+				}
+			}
+		}
+	}
+}
+Псевдоклассы:
+{
+	"version": 2,
+	"styles": {
+		"elements": {
+			"button": {
+				"color": {
+					"text": "#ffffff",
+					"background": "#aa3f33"
+				},
+				":hover": {
+					"color": {
+						"background": "#822f27"
+					}
+				}
+			}
+		}
+	}
+}
+Вложенность:
+{
+	"version": 2,
+	"styles": {
+		"elements": {
+			"core/pullquote": {
+				"typography": {
+					"fontSize": "2.25rem"
+				},
+				"elements": {
+					"cite": {
+						"typography": {
+							"fontSize": "max( 50%, 1.5rem )"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+создаст:
+.wp-block-pullquote {
+	font-size: 2.25rem;
+}
+.wp-block-pullquote cite {
+	font-size: max( 50%, 1.5rem );
+}
+
+Вариативность:
+{
+	"version": 2,
+	"styles": {
+		"blocks": {
+			"core/button": {
+				"variations": {
+					"outline": {
+						"border": {
+							"color": "currentColor",
+							"style": "solid",
+							"width": "2px"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+Цвет фона сайта должен использовать base предустановленный.
+Основной цвет текста сайта должен использовать contrast предустановленный цвет.
+Цвета ссылок должны использовать primary предустановленные.
+Для ссылки на предустановки в theme.json существует специальный синтаксис,
+который можно использовать: var:preset|$feature|$slug.
+Таким образом base, в этом случае цвет будет var:preset|color|base.
+{
+	"version": 2,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#ffffff",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#000000",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#89cff0",
+					"name": "Primary",
+					"slug": "primary"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"text": "var:preset|color|contrast",
+			"background": "var:preset|color|base"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|primary"
+				}
+			}
+		}
+	}
+}
+
+синтаксис CSS var( --wp--preset--{$feature}--{$slug} )
+синтаксис WordPress var:preset|$feature|$slug работает намного лучше
+
+Пользовательский пресет:
+{
+	"version": 2,
+	"settings": {
+		"custom": {
+			"lineHeight": {
+				"xs": "1",
+				"sm": "1.25",
+				"md": "1.5",
+				"lg": "1.75"
+			}
+		}
+	},
+	"styles": {
+		"typography": {
+			"lineHeight": "var:custom|line-height|md"
+		}
+	}
+}
+
+ - customTemplates: Метаданные для пользовательских шаблонов, определенных в папке вашей темы /templates.
+Эти шаблоны отдельных постов/страниц/CPT(пользовательский тип записи).
+При регистрации этих шаблонов пользователи темы могут выбрать их на экране редактирования поста.
+Для блочных тем WordPress будет искать шаблоны в /templates папке темы.
+Поэтому, регистрируетя шаблон example, должен быть /templates/example.html файл.
+{
+	"version": 2,
+	"customTemplates": [
+		{
+			"name": "content",
+			"title": "Content,
+			"postTypes": [
+				"page",
+				"post"
+			]
+		}
+	]
+}
+
+ - templateParts: Метаданные для частей шаблона, определенных в папке вашей темы /parts.
+обычно используются как разделы, которые нужно повторно использовать в нескольких шаблонах.
+WordPress будет искать части шаблона в /parts папке темы.
+Поэтому при регистрации части шаблона с именем `example` должен быть /parts/example.html файл.
+{
+	"version": 2,
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		}
+	]
+}
+ - area: Область, к которой относится часть шаблона. Параметры по умолчанию: header, footer, и uncategorized.
+ Можно назначить любой пользовательской области.
+ - name: Имя файла части шаблона без расширения.
+ - title: Понятное для человека название шаблона, которое может быть переведено.
+
+ - patterns: Массив шаблонов, которые необходимо зарегистрировать из каталога patterns.
+
+Позволяет объединять шаблоны из каталога шаблонов WordPress с темой,
+без необходимости разрабатывать и создавать их самостоятельно.
+{
+	"version": 2,
+	"patterns": [
+		"fullscreen-cover-image-gallery", - pattern's slug
+		"hero-banner-with-overlap-images",
+		"mixed-shape-gallery"
+	]
+}
+
+https://developer.wordpress.org/themes/global-settings-and-styles/settings/settings-reference/
+
+
+
+{
+ "version": 2,
+ "settings": {
+  "appearanceTools": true
+ }
+}
+эквивалентно:
+{
+ "version": 2,
+ "settings": {
+  "border": {
+   "color": true,
+   "radius": true,
+   "style": true,
+   "width": true
+  },
+  "color": {
+   "link": true
+  },
+  "dimensions": {
+   "minHeight": true
+  },
+  "position": {
+   "sticky": true
+  },
+  "spacing": {
+   "blockGap": true,
+   "margin": true,
+   "padding": true
+  },
+  "typography": {
+   "lineHeight": true
+  }
+ }
+}
+можно отключать свойства по одному.
+
+Вариации стиля сайта:
+файлы JSON с пользовательскими именами, которые хранятся в /styles папке темы - это по сути альтернативные версии theme.json.
+Это позволяет пользователям выбирать, какую вариацию ("скин" для темы) использовать на сайте.
+Заголовок вариации /styles/VariationsNane.json:
+{
+	"version": 2,
+	"title": "VariationsName",
+	"settings": {},
+	"styles": {}
+}
+Поле titleиспользуется для представления варианта в пользовательском интерфейсе.
+При выборе вариации данные файла JSON вариации сохраняются в базе данных как пользовательские настройки.
+Вариация стиля ограничена одним файлом JSON, который переопределяет основной theme.json,
+тогда как дочерняя тема может переопределять что угодно из своей родительской темы.
+В дочерней теме theme.json просто переопределяет файл родительской темы theme.json. 
+
+Шаблоны:
+шаблоны берут динамические данные и оборачивают их в структурированную HTML-разметку,
+ которая затем отправляется в браузер.
+<h1>Your Website Name</h1> = <!-- wp:site-title /-->
+
+<!-- wp:namespace/slug {"align":"full"} /-->
+Префикс: Префикс wp:сообщает WordPress, что это блок.
+Пространство имен: Пространство имен блока.
+Слаг: Слаг блока.
+Настройки блока: код JSON, представляющий настройки блока.
+
+При работе с основными блоками WordPress core/site-title 
+блок не включает предшествующее core/при вызове:
+<!-- wp:site-title /-->
+
+чтобы распространить свой шаблон вместе с темой,
+необходимо добавить его в пользовательский файл шаблона в папке темы /templates и
+зарегистрировать свой шаблон через свой theme.jsonфайл. 
+
+Созданные пользователем шаблоны хранятся wp_templateв базе данных под определенным типом записи.
+Шаблоны находятся в папке дочерней темы /templates(если дочерняя тема активна).
+Шаблоны в папке темы /templates.
+https://developer.wordpress.org/themes/templates/template-hierarchy/
+
+Patterns - один из самых полезных инструментов для разработки тем,
+позволяющий повторно использовать группы блоков в самых разных сценариях. 
+
+  <!-- https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src -->
+  Изменение блоков в WordPress:
+    добавить класс к блоку - на панели справа Advanced -> Additional CSS class:
+    либо добавить код в functions.php:
+    <pre>
+      <code>
+        function add_custom_class( $block_content, $block ) {
+          return str_replace( 'class="', 'class="my-custom-class ', $block_content );
+        }
+        add_filter( 'render_block', 'add_custom_class', 10, 2 );
+      </code>
+    </pre>
+    поменяет стили на фронте, использовать классы блоков с !importent.
+    либо
+    добавить папку styles в папку темы и создать файл yourname.json:
+    <pre>
+      <code>
+        {
+          "$schema": "https://schemas.wp.org/trunk/theme.json",
+          "version": 3,
+          "title": "Hand Drawn",
+          "slug": "hand-drawn",
+          "blockTypes": [ "core/image", "core/quote" ],
+          "styles": {
+            "color": {
+              "text": "var(--wp--preset--color--accent-3)"
+            },
+            "border": {
+              "color": "var(--wp--preset--color--accent-3)",
+              "style": "solid",
+              "width": "2px",
+              "radius": "255px 15px 225px 15px/15px 225px 15px 255px"
+            },
+            "shadow": "var(--wp--preset--shadow--natural)"
+          }
+        }
+      </code>
+    </pre>
+
+    добавить атрибут к блоку:
+    <pre>
+      <code>
+        function add_custom_attribute( $block_content, $block ) {
+          return str_replace( '<div', '<div data-my-custom-attribute="my-custom-attribute-value"', $block_content );
+        }
+        add_filter( 'render_block', 'add_custom_attribute', 10, 2 );
+      </code>
+    </pre>
+    Register the variations for the block:
+    <pre>
+      <code>
+        function my_custom_block_register_block_variations() {
+          register_block_style(
+            'core/quote',
+            array(
+              'name'         => 'fancy-quote',
+              'label'        => 'Fancy Quote',
+              'inline_style' => '.wp-block-quote.is-style-fancy-quote { background-color: #f00; color: #fff; padding: 20px; }',
+            )
+          );
+        }
+        add_action( 'init', 'my_custom_block_register_block_variations' );
+      </code>
+    </pre>
+
+    variations for the block json:
+    <pre>
+      <code>
+        {
+          "$schema": "https://schemas.wp.org/trunk/theme.json",
+          "version": 3,
+          "title": "Hand Drawn",
+          "slug": "hand-drawn",
+          "blockTypes": [ "core/image", "core/quote" ],
+          "styles": {
+            "color": {
+              "text": "var(--wp--preset--color--accent-3)"
+            },
+            "border": {
+              "color": "var(--wp--preset--color--accent-3)",
+              "style": "solid",
+              "width": "2px",
+              "radius": "255px 15px 225px 15px/15px 225px 15px 255px"
+            },
+            "shadow": "var(--wp--preset--shadow--natural)"
+          },
+          "blockVariations": {
+            "core/quote": {
+              "fancy-quote": {
+                "name": "Fancy Quote",
+                "inlineStyle": ".wp-block-quote.is-style-fancy-quote { background-color: #f00; color: #fff; padding: 20px; }"
+              }
+            }
+          }
+        }
+      </code>
+    </pre>
+
+    добавить блок в теме:
+    <pre>
+      <code>
+        function my_custom_block() {
+          register_block_type( 'my-custom-block', array(
+            'editor_script' => 'my-custom-block-editor',
+            'editor_style'  => 'my-custom-block-editor',
+            'style'         => 'my-custom-block',
+          ) );
+        }
+        add_action( 'init', 'my_custom_block' );
+      </code>
+    </pre>
+    добавить папку blocks в папку темы и создать файл yourname.php:
+    <pre>
+      <code>
+        function my_custom_block_styles() {
+          wp_enqueue_style(
+            'my-custom-block-styles',
+            get_template_directory_uri() . '/styles/yourname.css',
+            array( 'wp-edit-blocks' ),
+            filemtime( get_template_directory() . '/styles/yourname.css' )
+          );
+        }
+        add_action( 'enqueue_block_editor_assets', 'my_custom_block_styles' );
+      </code>
+    </pre>
+    добавить папку blocks в папку темы и создать файл yourname.js:
+    <pre>
+      <code>
+        function my_custom_block_scripts() {
+          wp_enqueue_script(
+            'my-custom-block-editor',
+            get_template_directory_uri() . '/blocks/yourname.js',
+            array( 'wp-blocks', 'wp-element', 'wp-editor' ),
+            filemtime( get_template_directory() . '/blocks/yourname.js' )
+          );
+        }
+        add_action( 'enqueue_block_editor_assets', 'my_custom_block_scripts' );
+      </code>
+      </pre>
+
+    добавить блок в теме json:
+    <pre>
+      <code>
+        {
+          "$schema": "https://schemas.wp.org/trunk/theme.json",
+          "version": 3,
+          "title": "Hand Drawn",
+          "slug": "hand-drawn",
+          "blockTypes": [ "core/image", "core/quote" ],
+          "styles": {
+            "color": {
+              "text": "var(--wp--preset--color--accent-3)"
+            },
+            "border": {
+              "color": "var(--wp--preset--color--accent-3)",
+              "style": "solid",
+              "width": "2px",
+              "radius": "255px 15px 225px 15px/15px 225px 15px 255px"
+            },
+            "shadow": "var(--wp--preset--shadow--natural)"
+          },
+          "blockVariations": {
+            "core/quote": {
+              "fancy-quote": {
+                "name": "Fancy Quote",
+                "inlineStyle": ".wp-block-quote.is-style-fancy-quote { background-color: #f00; color: #fff; padding: 20px; }"
+              }
+            }
+          },
+          "blockStyles": {
+            "my-custom-block": {
+              "editor": "my-custom-block-editor",
+              "style": "my-custom-block",
+              "script": "my-custom-block-editor"
+            }
+          }
+        }
+      </code>
+    </pre>
+    <!-- https://developer.wordpress.org/block-editor/ -->
+    
+    <!-- метаданные блока -->
+    <!-- https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/ -->
+
+    <!-- альтернативные стили к существующим блокам, добавляет класс CSS к блоку -->
+    <!-- https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/ -->
+
+    <!-- source core blocks -->
+    <!-- https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/ -->
+
+    <!-- вариации блока добавляют блоку атрибуты или внутренние блоки, -->
+    <!-- а также переопределяют стиль блока по умолчанию с помощью className атрибута -->
+    <!-- https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/ -->
+    
+
+    <!-- настройка темы -->
+    <!-- https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference/theme-json-living/ -->
+
+    <!-- достапные поля theme.json -->
+    <!-- https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference/styles-versions/ -->
+
+    <!-- компоненты -->
+    <!-- https://developer.wordpress.org/block-editor/reference-guides/components/ -->
+
+
+
+
+            </div>
+          </details>
 </body>
 </html>
