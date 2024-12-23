@@ -9,7 +9,7 @@ body {
 
 .logo {
   font-weight: 700;
-  font-size: xx-large;
+  font-size: 2rem;
   margin-top: 1.25rem;
   text-align: center;
 }
@@ -47,7 +47,7 @@ summary {
 /*Menu*/
 
 .menu__item {
-  font-size: xx-large;
+  font-size: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -56,7 +56,7 @@ summary {
 }
 
 .menu__item a {
-  font-size: large;
+  font-size: 1.125rem;
   color:#fff;
   margin-bottom: .625rem;
 }
@@ -64,7 +64,7 @@ summary {
 .menu__item_prelude {
   text-align: left;
   line-height: 2rem;
-  font-size: large;
+  font-size: 1.125rem;
 }
 
 .menu__item_prelude em {
@@ -88,7 +88,7 @@ table b {
 }
 
 thead {
-  background-color: rgba(150, 212, 212, 0.4);
+  background-color: #96d4d466;
 }
 
 tbody {
@@ -116,11 +116,11 @@ tr:nth-child(even) {
 }
 
 .menu__inner small {
-  color: aqua;
+  color: #00ffff;
 }
 
 .menu__inner b {
-  color: rgb(63, 192, 40);
+  color: #3fc028;
 }
 
 .menu__inner i, a {
@@ -129,7 +129,7 @@ tr:nth-child(even) {
 
 .resources {
   color: white;
-  font-size: medium;
+  font-size: 1rem;
 }
 
 /*Media*/
@@ -137,7 +137,7 @@ tr:nth-child(even) {
 @media (max-width: 32rem) {
   .logo {
     font-weight: 700;
-    font-size: x-large;
+    font-size: 1.5rem;
     margin-top: 1rem;
     text-align: center;
   }
@@ -152,17 +152,17 @@ tr:nth-child(even) {
   }
   
   .menu__item {
-    font-size: x-large;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
   
   .menu__item a {
-    font-size: large;
+    font-size: 1.125rem;
     color:#fff;
   }
 
   .menu__sublist a {
-    font-size:medium;
+    font-size:1rem;
     font-style: italic;
     color: #a9adb1;
   }
@@ -171,7 +171,7 @@ tr:nth-child(even) {
 @media (max-width: 25rem) {
   .logo {
     font-weight: 700;
-    font-size: large;
+    font-size: 1.125rem;
     margin-top: 0.75rem;
     text-align: center;
   }
@@ -186,17 +186,17 @@ tr:nth-child(even) {
   }
   
   .menu__item {
-    font-size: large;
+    font-size: 1.125rem;
     margin-bottom: 1.5rem;
   }
   
   .menu__item a {
-    font-size: large;
+    font-size: 1.125rem;
     color:#fff;
   }
 
   .menu__sublist a {
-    font-size:medium;
+    font-size:1rem;
     font-style: italic;
     color: #a9adb1;
   }
